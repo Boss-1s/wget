@@ -1,0 +1,19 @@
+name: Get GBA GD
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v6
+
+      - name: get file and push
+        run: |
+          bash get_gbagd.sh
+          git config --global user.email "Boss-1s[BOT]@users.noreply.gihub.com"
+          git config --global user.name "Boss-1s[BOT]"
+          bash push.sh
