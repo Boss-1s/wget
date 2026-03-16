@@ -1,0 +1,17 @@
+name: Get nesDS.nds
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: get file and push
+        run: |
+          bash get_nesds.sh
+          bash push.sh
