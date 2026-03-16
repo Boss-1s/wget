@@ -1,0 +1,19 @@
+name: Get gba runner
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: get file and push
+        run: |
+          wget https://github.com/Gericom/GBARunner2/releases/download/v20200812-131430_6e4ce45/GBARunner2_arm9dldi_ds.nds
+          git config --global user.email "Boss-1s[BOT]@users.noreply.gihub.com"
+          git config --global user.name "Boss-1s[BOT]"
+          bash push.sh
