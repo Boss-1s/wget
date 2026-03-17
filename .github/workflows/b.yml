@@ -1,0 +1,19 @@
+name: Get 2048
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: get file and push
+        run: |
+          wget https://github.com/mdmrk/2048-nds/releases/download/v1.0.2/2048-nds.nds
+          git config --global user.email "Boss-1s[BOT]@users.noreply.gihub.com"
+          git config --global user.name "Boss-1s[BOT]"
+          bash push.sh
