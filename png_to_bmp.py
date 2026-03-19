@@ -1,5 +1,5 @@
 from PIL import Image
-import os
+import os, time
 
 def convert_png_to_bmp(png_file, bmp_file):
     """
@@ -27,8 +27,8 @@ def convert_png_to_bmp(png_file, bmp_file):
         print(f"An error occurred: {e}")
 
 # Example usage:
-source_file = "input_image.png"  # Replace with your PNG file name
-output_file = "output_image.bmp" # Replace with desired output file name
+source_file = os.environ.get('LINK')
+output_file = f"{time.time()}.bmp"
 
 # Create a dummy file for demonstration purposes if it doesn't exist
 if not os.path.exists(source_file):
