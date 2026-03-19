@@ -1,0 +1,27 @@
+name: convert png to bmp
+
+on:
+  workflow_dispatch:
+    inputs:
+      link:
+        type: string
+        description: 'link to png'
+        required: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: get file and push
+        env:
+          LINK: ${{ inputs.link }}
+        run: |
+          pip install -U Pillow
+          python png_to_bmp.py
+          git config --global user.email "Boss-1s[BOT]@users.noreply.gihub.com"
+          git config --global user.name "Boss-1s[BOT]"
+          bash push.sh
