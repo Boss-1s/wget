@@ -1,7 +1,12 @@
-name: Get daedalus
+name: Get anything
 
 on:
   workflow_dispatch:
+    inputs:
+      link:
+        description: 'Link to run wget on.'
+        type: string
+        required: true
 
 jobs:
   build:
@@ -13,7 +18,7 @@ jobs:
 
       - name: get file and push
         run: |
-          wget https://github.com/DaedalusX64/daedalus/releases/download/1.1.8/DaedalusX64_1_1_8.zip
+          wget ${{ inputs.link }}
           git config --global user.email "Boss-1s[BOT]@users.noreply.gihub.com"
           git config --global user.name "Boss-1s[BOT]"
           bash push.sh
