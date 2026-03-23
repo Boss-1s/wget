@@ -7,6 +7,11 @@ on:
         type: string
         description: 'link to wav'
         required: true
+      resample:
+        type: boolean
+        description: 'Resample to 11025hz?'
+        required: true
+        default: false
 
 jobs:
   build:
@@ -19,5 +24,18 @@ jobs:
       - name: get file and push
         env:
           LINK: ${{ inputs.link }}
+          RE: ${{inputs.resample}}
         run: |
+          if [[ "$RE" == "true" ]]; then
+            echo "Will be resampling - importing libraries"
+            pip install -U librosa
+            pip install -U soundfile
+          else
+            echo "No resampling"
+          fi
           python wav_read.py
+          if [[ "$RE" == "true" ]]; then
+            git config --global user.email "Boss-1s[BOT]@users.noreply.gihub.com"
+            git config --global user.name "Boss-1s[BOT]"
+            bash push.sh
+          fi
