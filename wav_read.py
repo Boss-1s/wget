@@ -1,4 +1,4 @@
-import wave,os,librosa,soundfile as sf
+import wave,os
 
 wf = os.environ.get('LINK')
 
@@ -18,6 +18,7 @@ print(f"Bit Depth: {bit_depth}-bit")
 print(f"Channels: {channels}")
 
 if os.environ.get('RE'):
+    import librosa,soundfile as sf
     # Load at original sample rate
     y, sr = librosa.load(wf, sr=None) 
     
