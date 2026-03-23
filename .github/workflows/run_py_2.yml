@@ -1,0 +1,23 @@
+name: read wav file info
+
+on:
+  workflow_dispatch:
+    inputs:
+      link:
+        type: string
+        description: 'link to wav'
+        required: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: get file and push
+        env:
+          LINK: ${{ inputs.link }}
+        run: |
+          python wav_read.py
