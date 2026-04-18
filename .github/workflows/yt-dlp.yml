@@ -53,11 +53,11 @@ jobs:
           python -m pip install -U "yt-dlp[default]"
       - name: Setup Deno
         uses: denoland/setup-deno@v2.0.4
-                
       - name: get audio and push
         run: |
           mkdir -p "audio" && cd "audio"
-          yt-dlp -x --audio-format ${{inputs.format}} --audio-quality ${{ inputs.quality }} --cookies-from-browser chrome ${{ inputs.link }}
+          yt-dlp --cookies-from-browser chrome --cookies cookies.txt
+          yt-dlp -x --audio-format ${{inputs.format}} --audio-quality ${{ inputs.quality }} ${{ inputs.link }}
           git config --global user.email "Boss-1s[BOT]@users.noreply.gihub.com"
           git config --global user.name "Boss-1s[BOT]"
           bash push.sh
