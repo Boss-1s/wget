@@ -51,6 +51,9 @@ jobs:
       - name: Download Dependancies
         run: |
           python -m pip install -U "yt-dlp[default]"
+      - name: Setup Deno
+        uses: denoland/setup-deno@v2.0.4
+                
       - name: get audio and push
         run: |
           mkdir -p "audio" && cd "audio"
