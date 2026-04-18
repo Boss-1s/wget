@@ -54,7 +54,7 @@ jobs:
       - name: get audio and push
         run: |
           mkdir -p "audio" && cd "audio"
-          yt-dlp -x --audio-format mp3 ${{ inputs.link }}
+          yt-dlp -x --audio-format ${{inputs.format}} --audio-quality ${{ inputs.quality }} --cookies-from-browser chrome ${{ inputs.link }}
           git config --global user.email "Boss-1s[BOT]@users.noreply.gihub.com"
           git config --global user.name "Boss-1s[BOT]"
           bash push.sh
