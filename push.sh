@@ -16,5 +16,20 @@ else
 fi
 
 git add .
+
+# Find staged files larger than 100MB (102400 KB)
+large_files=$(find . -type f -size +100M -not -path '*/.*')
+
+if [ -n "$large_files" ]; then
+    echo "Found files exceeding 100MB. Moving to Git LFS..."
+    echo "$large_files" | xargs git lfs track
+    git add .gitattributes
+    # Re-stage files to ensure they are tracked as LFS pointers
+    echo "$large_files" | xargs git add
+    echo "Files are now tracked by LFS. You can proceed with your commit."
+else
+    echo "No files exceed 100MB."
+fi
+
 git commit -m "[WORKFLOW] Push Changes"
 git push origin main
