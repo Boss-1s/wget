@@ -1,5 +1,5 @@
 name: Get any audio from youtube videos
-description: Use yt-dlp to get audio from a yt video
+description: Use youtube-to-audio to get audio from a yt video
 
 on:
   workflow_dispatch:
@@ -19,27 +19,13 @@ on:
           - ogg
           - aac
           - flac
-          - alac
-          - aiff
-          - wma
           - opus
-          - vorbis
-      quality:
-        description: 'Quality of extraction, with lower being better.'
-        default: '5'
-        type: choice
-        options:
-         - 0
-         - 1
-         - 2
-         - 3
-         - 4
-         - 5
-         - 6
-         - 7
-         - 8
-         - 9
-         - 10
+      oname:
+        description: 'Name of audio to be extracted. (Single videos only)'
+        type: string
+      pname:
+        description: 'Folder name of audio to be extracted. (Playlists only)'
+        type: string
 
 jobs:
   build:
@@ -50,14 +36,10 @@ jobs:
         uses: actions/checkout@v4
       - name: Download Dependancies
         run: |
-          python -m pip install -U "yt-dlp[default]"
-      - name: Setup Deno
-        uses: denoland/setup-deno@v2.0.4
+          pip install -U youtube-to-audio FFmpeg
       - name: get audio and push
         run: |
-          mkdir -p "audio" && cd "audio"
-          yt-dlp --cookies-from-browser chrome --cookies cookies.txt
-          yt-dlp -x --audio-format ${{inputs.format}} --audio-quality ${{ inputs.quality }} ${{ inputs.link }}
+          youtube-to-audio --url ${{inputs.link}} --format ${{inputs.format}} --output_name ${{inputs.oname}} --playlist_name ${{inputs.pname}}
           git config --global user.email "Boss-1s[BOT]@users.noreply.gihub.com"
           git config --global user.name "Boss-1s[BOT]"
           bash push.sh
