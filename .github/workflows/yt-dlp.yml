@@ -8,6 +8,14 @@ on:
         description: 'Link to run yt-dlp on.'
         type: string
         required: true
+      type:
+        description: 'yt link type (output = single video):'
+        type: choice
+        required: true
+        default: 'output'
+        options:
+          - output
+          - playlist
       format:
         description: 'Format to download in.'
         default: 'mp3'
@@ -21,10 +29,7 @@ on:
           - flac
           - opus
       oname:
-        description: 'Name of audio to be extracted. (Single videos only)'
-        type: string
-      pname:
-        description: 'Folder name of audio to be extracted. (Playlists only)'
+        description: 'Name of audio to be extracted. (Single videos only)/Folder name of audio to be extracted. (Playlists only)'
         type: string
 
 jobs:
@@ -39,7 +44,7 @@ jobs:
           pip install -U youtube-to-audio FFmpeg
       - name: get audio and push
         run: |
-          youtube-to-audio --url ${{inputs.link}} --format ${{inputs.format}} --output_name ${{inputs.oname}} --playlist_name ${{inputs.pname}}
+          youtube-to-audio --url ${{inputs.link}} --format ${{inputs.format}} --${{inputs.type}}_name ${{inputs.oname}}
           git config --global user.email "Boss-1s[BOT]@users.noreply.gihub.com"
           git config --global user.name "Boss-1s[BOT]"
           bash push.sh
