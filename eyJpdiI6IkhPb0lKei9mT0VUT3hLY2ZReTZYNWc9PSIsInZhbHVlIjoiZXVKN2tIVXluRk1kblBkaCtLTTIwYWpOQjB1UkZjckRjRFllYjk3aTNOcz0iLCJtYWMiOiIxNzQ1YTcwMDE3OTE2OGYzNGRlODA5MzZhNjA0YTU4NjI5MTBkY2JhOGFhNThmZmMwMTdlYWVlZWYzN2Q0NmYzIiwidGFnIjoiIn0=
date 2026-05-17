@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+	<link rel="preconnect" href="https://use.fontawesome.com" crossorigin>
+	<link rel="preload" href="https://use.fontawesome.com/releases/v5.0.13/webfonts/fa-solid-900.woff2" as="font"
+		type="font/woff2" crossorigin>
+
+	<style type="text/css">@font-face {font-family:Montserrat;font-style:normal;font-weight:400;src:url(/cf-fonts/s/montserrat/5.0.16/cyrillic/400/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Montserrat;font-style:normal;font-weight:400;src:url(/cf-fonts/s/montserrat/5.0.16/cyrillic-ext/400/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Montserrat;font-style:normal;font-weight:400;src:url(/cf-fonts/s/montserrat/5.0.16/latin/400/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Montserrat;font-style:normal;font-weight:400;src:url(/cf-fonts/s/montserrat/5.0.16/latin-ext/400/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Montserrat;font-style:normal;font-weight:400;src:url(/cf-fonts/s/montserrat/5.0.16/vietnamese/400/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Open Sans;font-style:normal;font-weight:400;src:url(/cf-fonts/s/open-sans/5.0.20/greek/400/normal.woff2);unicode-range:U+0370-03FF;font-display:swap;}@font-face {font-family:Open Sans;font-style:normal;font-weight:400;src:url(/cf-fonts/s/open-sans/5.0.20/vietnamese/400/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Open Sans;font-style:normal;font-weight:400;src:url(/cf-fonts/s/open-sans/5.0.20/cyrillic-ext/400/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Open Sans;font-style:normal;font-weight:400;src:url(/cf-fonts/s/open-sans/5.0.20/latin/400/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Open Sans;font-style:normal;font-weight:400;src:url(/cf-fonts/s/open-sans/5.0.20/latin-ext/400/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Open Sans;font-style:normal;font-weight:400;src:url(/cf-fonts/s/open-sans/5.0.20/hebrew/400/normal.woff2);unicode-range:U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F;font-display:swap;}@font-face {font-family:Open Sans;font-style:normal;font-weight:400;src:url(/cf-fonts/s/open-sans/5.0.20/cyrillic/400/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Open Sans;font-style:normal;font-weight:400;src:url(/cf-fonts/s/open-sans/5.0.20/greek-ext/400/normal.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:Open Sans;font-style:normal;font-weight:600;src:url(/cf-fonts/s/open-sans/5.0.20/greek/600/normal.woff2);unicode-range:U+0370-03FF;font-display:swap;}@font-face {font-family:Open Sans;font-style:normal;font-weight:600;src:url(/cf-fonts/s/open-sans/5.0.20/latin/600/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Open Sans;font-style:normal;font-weight:600;src:url(/cf-fonts/s/open-sans/5.0.20/vietnamese/600/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Open Sans;font-style:normal;font-weight:600;src:url(/cf-fonts/s/open-sans/5.0.20/hebrew/600/normal.woff2);unicode-range:U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F;font-display:swap;}@font-face {font-family:Open Sans;font-style:normal;font-weight:600;src:url(/cf-fonts/s/open-sans/5.0.20/greek-ext/600/normal.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:Open Sans;font-style:normal;font-weight:600;src:url(/cf-fonts/s/open-sans/5.0.20/latin-ext/600/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Open Sans;font-style:normal;font-weight:600;src:url(/cf-fonts/s/open-sans/5.0.20/cyrillic-ext/600/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Open Sans;font-style:normal;font-weight:600;src:url(/cf-fonts/s/open-sans/5.0.20/cyrillic/600/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Open Sans;font-style:normal;font-weight:700;src:url(/cf-fonts/s/open-sans/5.0.20/latin-ext/700/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Open Sans;font-style:normal;font-weight:700;src:url(/cf-fonts/s/open-sans/5.0.20/cyrillic-ext/700/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Open Sans;font-style:normal;font-weight:700;src:url(/cf-fonts/s/open-sans/5.0.20/greek/700/normal.woff2);unicode-range:U+0370-03FF;font-display:swap;}@font-face {font-family:Open Sans;font-style:normal;font-weight:700;src:url(/cf-fonts/s/open-sans/5.0.20/latin/700/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Open Sans;font-style:normal;font-weight:700;src:url(/cf-fonts/s/open-sans/5.0.20/cyrillic/700/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Open Sans;font-style:normal;font-weight:700;src:url(/cf-fonts/s/open-sans/5.0.20/hebrew/700/normal.woff2);unicode-range:U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F;font-display:swap;}@font-face {font-family:Open Sans;font-style:normal;font-weight:700;src:url(/cf-fonts/s/open-sans/5.0.20/vietnamese/700/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Open Sans;font-style:normal;font-weight:700;src:url(/cf-fonts/s/open-sans/5.0.20/greek-ext/700/normal.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}</style>
+	<link href="https://use.fontawesome.com/releases/v5.0.13/css/fontawesome.css" rel="preload" as="style"
+		crossorigin="anonymous">
+	<link href="https://use.fontawesome.com/releases/v5.0.13/css/regular.css" rel="preload" as="style"
+		crossorigin="anonymous">
+	<link href="https://use.fontawesome.com/releases/v5.0.13/css/solid.css" rel="preload" as="style"
+		crossorigin="anonymous">
+
+	<title>RomUlation | Play Console Classics on your Computer</title>
+	<meta name="description" content="RomUlation lets you play console classics on your computer or phone. Re-live your childhood today.">
+
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="RomUlation">
+	<meta property="og:title" content="RomUlation | Play Console Classics on your Computer">
+	<meta property="og:description" content="RomUlation lets you play console classics on your computer or phone. Re-live your childhood today.">
+	<meta property="og:image" content="https://www.romulation.org/images/logo.png">
+
+	<style>
+		h1,
+		h2,
+		h3,
+		h4,
+		h5 {
+			text-transform: uppercase;
+			letter-spacing: 1.35px;
+			font-family: 'Montserrat', sans-serif;
+		}
+
+		body,
+		p,
+		span,
+		div {
+			font-family: 'Open Sans', sans-serif;
+		}
+	</style>
+	<link rel="preload" as="style" href="https://www.romulation.org/build/assets/css/app-BMPKw4IZ.css" /><link rel="stylesheet" href="https://www.romulation.org/build/assets/css/app-BMPKw4IZ.css" data-navigate-track="reload" />
+		<link rel="preload" as="style" href="https://www.romulation.org/build/assets/css/systempage-BRrTFN8M.css" /><link rel="stylesheet" href="https://www.romulation.org/build/assets/css/systempage-BRrTFN8M.css" data-navigate-track="reload" />	<meta name="robots" content="noindex">
+</head>
+
+<body id="body">
+		<header>
+		<div class="container">
+			<div class="logo">
+				<a href="/"><img src="/images/logo.png" class="img-responsive" width="360" height="76"
+						alt="RomUlation - Play Console Classics on your Computer"
+						title="RomUlation lets you download Wii ISOs, PS2 ISOs, GameCube ISOs, NDS ROMs and More"></a>
+			</div>
+			<button class="hamburger hamburger--spin" role="button" aria-label="Menu" aria-controls="navigation">
+				<span class="hamburger-box">
+					<span class="hamburger-inner"></span>
+				</span>
+			</button>
+			<nav class="main" id="navigation" aria-label="menu">
+				<ul>
+					<li>
+						<input type="checkbox" class="toggle-subnav" tabindex="-1" id="nav-home" />
+						<label for="nav-home">
+							<a href="#">Home <span class="caret"></span></a>
+						</label>
+						<nav class="subnav" aria-label="main-navigation">
+							<ul>
+								<li><a href="/">Frontpage</a></li>
+								<li><a href="/discord">Discord Community</a></li>
+								<li><a href="//forum.romulation.org/">Forum</a></li>
+								<li><a href="/tutorials">Tutorials</a></li>
+								<li><a href="/friends">Affiliates</a></li>
+								<li><a href="/buy/premium">Premium</a></li>
+								<li><a href="/contact">Contact</a></li>
+							</ul>
+						</nav>
+					</li>
+					<li>
+						<input type="checkbox" class="toggle-subnav" tabindex="-1" id="nav-roms" />
+						<label for="nav-roms">
+							<a href="#">ROMs <span class="caret"></span></a>
+						</label>
+						<nav class="subnav wide" aria-label="ROM system navigation">
+							<span class="header"><span class="icon-microsoft"></span>Microsoft</span>
+							<ul>
+								<li><a href="/roms/XBOX"><span class="icon icon-xbox"></span> Microsoft XBOX</a></li>
+							</ul>
+							<span class="header"><span class="icon-sony"></span>Sony</span>
+							<ul>
+								<li><a href="/roms/PSX"><span class="icon icon-ps"></span> PlayStation (PSX)</a></li>
+								<li><a href="/roms/PS2"><span class="icon icon-ps2"></span> Playstation 2 (PS2)</a></li>
+								<li><a href="/roms/PS3"><span class="icon icon-ps3"></span> Playstation 3 (PS3)</a></li>
+								<li><a href="/roms/PSP"><span class="icon icon-psp"></span> PlayStation Portable</a>
+								</li>
+							</ul>
+							<span class="header"><span class="icon-sega"></span>Sega</span>
+							<ul>
+								<li><a href="/roms/Dreamcast"><span class="icon icon-dreamcast"></span> Sega
+										Dreamcast</a></li>
+								<li><a href="/roms/Sega-Genesis"><span class="icon icon-genesis"></span> Sega
+										Genesis</a></li>
+								<li><a href="/roms/Sega-Saturn"><span class="icon icon-saturn"></span> Sega Saturn</a>
+								</li>
+							</ul>
+							<span class="header">Nintendo</span>
+							<ul>
+								<li><a href="/roms/Wii"><span class="icon icon-wii"></span> Nintendo Wii</a></li>
+								<li><a href="/roms/GameCube"><span class="icon icon-gamecube"></span> Nintendo
+										GameCube</a></li>
+								<li><a href="/roms/3DS"><span class="icon icon-3ds"></span> Nintendo 3DS</a></li>
+								<li><a href="/roms/NDS"><span class="icon icon-nds"></span> Nintendo DS</a></li>
+								<li><a href="/roms/GBA"><span class="icon icon-gba"></span> GameBoy Advance</a></li>
+								<li><a href="/roms/N64"><span class="icon icon-n64"></span> Nintendo 64</a></li>
+								<li><a href="/roms/SNES"><span class="icon icon-snes"></span> SNES</a></li>
+								<li><a href="/roms/NES"><span class="icon icon-nes"></span> NES</a></li>
+								<li><a href="/roms/Game-Boy-Color"><span class="icon icon-gbc"></span> Game Boy
+										Color</a></li>
+							</ul>
+						</nav>
+					</li>
+					<li><a href="/introduction">Help</a></li>
+										<li>
+						<a href="/user/login">Log in</a>
+					</li>
+									</ul>
+												<div class="upgrade">
+					<a href="/user/sign-up" class="btn btn-green btn-header">Sign-up</a>
+				</div>
+							</nav>
+		</div>
+	</header>
+
+	<main>
+		
+	<section class="page-header">
+	<div class="container">
+		<ol class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+			<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">Home</span></a><meta itemprop="position" content="1" /></li>
+							<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/roms" itemprop="item"><span itemprop="name">ROM Downloads</span></a><meta itemprop="position" content="2" /></li>
+							<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/roms/NDS" itemprop="item"><span itemprop="name">NDS ROMs</span></a><meta itemprop="position" content="3" /></li>
+							<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/rom/NDS/Phoenix-Wright-Ace-Attorney" itemprop="item"><span itemprop="name">Phoenix Wright - Ace Attorney</span></a><meta itemprop="position" content="4" /></li>
+						<li class="active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/roms/newdownload/guest/7091/eyJpdiI6IkhPb0lKei9mT0VUT3hLY2ZReTZYNWc9PSIsInZhbHVlIjoiZXVKN2tIVXluRk1kblBkaCtLTTIwYWpOQjB1UkZjckRjRFllYjk3aTNOcz0iLCJtYWMiOiIxNzQ1YTcwMDE3OTE2OGYzNGRlODA5MzZhNjA0YTU4NjI5MTBkY2JhOGFhNThmZmMwMTdlYWVlZWYzN2Q0NmYzIiwidGFnIjoiIn0=" itemprop="item"><span itemprop="name">Download Phoenix Wright - Ace Attorney</span></a><meta itemprop="position" content="5" /></li>
+		</ol>
+		<h1>Download Phoenix Wright - Ace Attorney</h1>
+	</div>
+</section>
+	<section>
+		<div class="container">
+
+			
+			<div class="download-header">
+				<div class="screenshots">
+					<img src="/images/download.png" alt="" class="download-folder img-responsive" loading="lazy">
+				</div>
+				<div class="details-container">
+					<table class="details-table">
+						<tr>
+							<td width="200"><strong>File</strong></td>
+							<td>NDS - Phoenix Wright - Ace Attorney</td>
+						</tr>
+						<tr>
+							<td><strong>Max download speed</strong></td>
+							<td>1000 KB/s</td>
+						</tr>
+											</table>
+
+					<br>
+											<div class="alert alert-danger restricted-button" role="alert">
+							Sorry, this game is restricted.
+						</div>
+									</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="go-premium">
+		<div class="container">
+
+			<div class="go-premium">
+
+				<h2 class="dual-lined short"><span class="far fa-star"></span> Go Premium</h2>
+
+				<div class="go-premium-inner">
+					<div class="ribbon">
+						<img src="/images/medal_small.png" alt="" class="go-premium_image" loading="lazy">
+					</div>
+					<div class="action">
+						<h3>Keep gaming with RomUlation premium!</h3>
+						<a href="/buy/premium?utm_source=romulation&utm_medium=website&utm_campaign=guest-download-footer" class="btn btn-green">Upgrade to premium</a>
+					</div>
+					<div class="advantages">
+						<div class="item">
+							<span class="fas fa-check-circle green"></span> Unlimited Downloading
+						</div>
+						<div class="item">
+							<span class="fas fa-check-circle green"></span> Direct Downloads
+						</div>
+						<div class="item">
+							<span class="fas fa-check-circle green"></span> No Account Restrictions!
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</section>
+	</main>
+
+	<footer>
+		<div class="container">
+			<div class="logo">
+				<a href="/"><img src="/images/logo-inverse.png" fetchpriority="low" loading="lazy"
+						class="img-responsive" width="356" height="69"
+						alt="RomUlation - Play Console Classics on your Computer"
+						title="RomUlation lets you download Wii ISOs, PS2 ISOs, GameCube ISOs, NDS ROMs and More"></a>
+			</div>
+
+			<div class="links">
+				© RomUlation 2003-2026
+				<nav aria-label="footer navigation">
+					<ul>
+						<li><a href="/contact">Contact RomUlation</a></li>
+						<li><a href="/privacy-policy">Privacy Policy & Legal</a></li>
+						<li><a href="/dmca-policy">DMCA Policy</a></li>
+											</ul>
+				</nav>
+			</div>
+		</div>
+	</footer>
+
+	<script type="module" defer>
+		var hamburger = document.querySelector(".hamburger");
+		var nav = document.querySelector("nav.main");
+		hamburger.addEventListener("click", function () {
+			hamburger.classList.toggle("is-active");
+			nav.classList.toggle("is-active");
+		});
+		function injectCSS(file) {
+			var link = document.createElement('link');
+			link.href = file;
+			link.type = 'text/css';
+			link.rel = 'stylesheet';
+			link.crossOrigin = 'anonymous';
+
+			document.getElementsByTagName('head')[0].appendChild(link);
+		}
+		document.addEventListener("DOMContentLoaded", function () {
+			injectCSS('https://use.fontawesome.com/releases/v5.0.13/css/fontawesome.css');
+			injectCSS('https://use.fontawesome.com/releases/v5.0.13/css/regular.css');
+			injectCSS('https://use.fontawesome.com/releases/v5.0.13/css/solid.css');
+
+			document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+				anchor.addEventListener('click', function (e) {
+					e.preventDefault();
+
+					const targetId = this.getAttribute('href').substring(1);
+					if (!targetId) return;
+
+					const target = document.getElementById(targetId);
+
+					// Check if visible (approximate jquery :visible)
+					if (target && (target.offsetParent !== null || target.getClientRects().length > 0)) {
+						const elementPosition = target.getBoundingClientRect().top;
+						const offsetPosition = elementPosition + window.scrollY;
+
+						window.scrollTo({
+							top: offsetPosition,
+							behavior: "smooth"
+						});
+
+						// Update URL hash without jumping
+						history.pushState(null, null, '#' + targetId);
+					}
+				});
+			});
+		});
+	</script>
+
+	</body>
+
+</html>
