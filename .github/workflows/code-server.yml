@@ -16,7 +16,8 @@ jobs:
     - name: Test Official VS Code Tunnel
       run: |
         # Download the official VS Code binary
-        curl -Lk 'https://visualstudio.com' --output vscode_cli.tar.gz
+        curl -Lk 'https://update.code.visualstudio.com/latest/cli-alpine-x64/stable' --output vscode_cli.tar.gz
+
         tar -xf vscode_cli.tar.gz
 
         # Start the tunnel and keep it open for your 1-minute test window
