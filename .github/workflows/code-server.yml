@@ -14,6 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Test Official VS Code Tunnel
+      env:
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       run: |
         # Download the official VS Code binary
         curl -Lk 'https://update.code.visualstudio.com/latest/cli-alpine-x64/stable' --output vscode_cli.tar.gz
