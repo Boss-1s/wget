@@ -19,13 +19,23 @@ jobs:
       - name: Start code-server with tunnel
         # Using cloudflared to expose the local server to the web
         run: |
-          # Install localtunnel globally
-          npm install -g localtunnel
-          # Start code-server in the background without the --link flag
-          code-server --auth github &
-          # Wait a moment for code-server to initialize on port 8080
-          sleep 3
-          # Start the tunnel in the background and output the public URL
-          lt --port 8080 &
-          # Keep the workflow runner alive for your desired duration
-          sleep ${{inputs.time}}m
+          # 1. Start code-server using its default config.yml settings
+           code-server &
+           
+           # 2. Give the server a moment to boot up and generate the password
+           sleep 5
+
+           # 3. Extract and print the generated password to your workflow logs
+           echo "=================================================="
+           echo " YOUR CODE-SERVER PASSWORD IS:"
+           grep 'password:' ~/.config/code-server/config.yml | awk '{print $2}'
+           echo "=================================================="
+
+           # 4. Create an SSH tunnel. This routes the runner's port 8080 to a public SSH endpoint.
+           # The 'StrictHostKeyChecking=no' bypasses the prompt so it runs seamlessly in automation.
+           ssh -R 80:localhost:8080 -o StrictHostKeyChecking=no nokey@localhost.run &
+
+           # 5. Keep the runner open so you can connect and work
+           sleep ${{inputs.time}}m
+
+           echo Ending server. Thank you for using code-server.
