@@ -1,6 +1,12 @@
 name: code-server
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      time:
+        type: number
+        default: 1
+        description: time to run server in mins
 
 jobs:
   debug-environment:
@@ -12,5 +18,5 @@ jobs:
       - name: Start code-server with tunnel
         # Using cloudflared to expose the local server to the web
         run: |
-          nohup code-server --auth none --bind-addr 0.0.0.0:4000 &
-          # You would typically use a tunnel tool here to access it
+          code-server --link --auth github
+          sleep ${{inputs.time}}m
