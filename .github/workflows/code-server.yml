@@ -13,29 +13,12 @@ jobs:
   debug-environment:
     runs-on: ubuntu-latest
     steps:
-      - name: Install code-server
-        uses: jcbhmr/setup-code-server@v1
-      
-      - name: Start code-server with tunnel
-        # Using cloudflared to expose the local server to the web
-        run: |
-          # 1. Start code-server using its default config.yml settings
-           code-server --config ~/.config/code-server/config.yml --auth password &
-           
-           # 2. Give the server a moment to boot up and generate the password
-           sleep 5
+    - name: Test Official VS Code Tunnel
+      run: |
+        # Download the official VS Code binary
+        curl -Lk 'https://visualstudio.com' --output vscode_cli.tar.gz
+        tar -xf vscode_cli.tar.gz
 
-           # 3. Extract and print the generated password to your workflow logs
-           echo "=================================================="
-           echo " YOUR CODE-SERVER PASSWORD IS:"
-           grep 'password:' ~/.config/code-server/config.yml | awk '{print $2}'
-           echo "=================================================="
-
-           # 4. Create an SSH tunnel. This routes the runner's port 8080 to a public SSH endpoint.
-           # The 'StrictHostKeyChecking=no' bypasses the prompt so it runs seamlessly in automation.
-           ssh -R 80:localhost:8080 -o StrictHostKeyChecking=no nokey@localhost.run &
-
-           # 5. Keep the runner open so you can connect and work
-           sleep ${{inputs.time}}m
-
-           echo Ending server. Thank you for using code-server.
+        # Start the tunnel and keep it open for your 1-minute test window
+        timeout ${{inputs.time}}m ./code tunnel --accept-server-license-terms || true
+        
