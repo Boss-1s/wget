@@ -20,7 +20,7 @@ jobs:
         # Using cloudflared to expose the local server to the web
         run: |
           # 1. Start code-server using its default config.yml settings
-           code-server &
+           code-server --config ~/.config/code-server/config.yml --auth password &
            
            # 2. Give the server a moment to boot up and generate the password
            sleep 5
