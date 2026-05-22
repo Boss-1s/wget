@@ -23,5 +23,6 @@ jobs:
         tar -xf vscode_cli.tar.gz
 
         # Start the tunnel and keep it open for your 1-minute test window
-        timeout ${{inputs.time}}m ./code tunnel --accept-server-license-terms --github-auth || true
-        
+        timeout ${{inputs.time}}m ./code tunnel --accept-server-license-terms || true
+
+        echo Terminating server gracefully
