@@ -6,6 +6,7 @@ on:
       time:
         type: number
         default: 1
+        required: true
         description: time to run server in mins
 
 jobs:
@@ -18,5 +19,13 @@ jobs:
       - name: Start code-server with tunnel
         # Using cloudflared to expose the local server to the web
         run: |
-          code-server --link --auth github
+          # Install localtunnel globally
+          npm install -g localtunnel
+          # Start code-server in the background without the --link flag
+          code-server --auth github &
+          # Wait a moment for code-server to initialize on port 8080
+          sleep 3
+          # Start the tunnel in the background and output the public URL
+          lt --port 8080 &
+          # Keep the workflow runner alive for your desired duration
           sleep ${{inputs.time}}m
