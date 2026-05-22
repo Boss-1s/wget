@@ -1,0 +1,16 @@
+name: code-server
+
+on: workflow_dispatch
+
+jobs:
+  debug-environment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install code-server
+        uses: jcbhmr/setup-code-server@v1
+      
+      - name: Start code-server with tunnel
+        # Using cloudflared to expose the local server to the web
+        run: |
+          nohup code-server --auth none --bind-addr 0.0.0.0:4000 &
+          # You would typically use a tunnel tool here to access it
