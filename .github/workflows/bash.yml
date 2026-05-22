@@ -1,0 +1,27 @@
+name: Run anything single-line bash
+
+on:
+  workflow_dispatch:
+    inputs:
+      run:
+        description: 'Bash cmd to run.'
+        type: string
+        required: true
+      repo:
+        description: '[Optional] Repo to check out, in format owner/repo'
+        type: string
+        required: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repo
+        if: ${{ inputs.repo != '' }}
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ inputs.repo }}
+
+      - name: run command
+        run: ${{inputs.run}}
