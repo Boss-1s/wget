@@ -1,0 +1,317 @@
+﻿<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+   <title>AI2 Popup Menu Extension</title>
+   <meta content="text/html;charset=UTF-8" http-equiv="Content-Type">
+   <meta content="Android, ActionBar, Toolbar, Java, App Inventor, Picture, Extension" name="keywords">
+   <meta content="Ulli" name="author">
+   <meta content="Private Homepage" name="page-type">
+   <link href="_grafiken/urs-logo.png" rel="SHORTCUT ICON">
+   <!-- ========================= Fancy Box =============================== -->
+   <!-- Add jQuery library -->
+   <script src="fancybox/jquery-1.9.0.min.js" type="text/javascript"></script>
+   <!-- Add fancyBox main JS and CSS files -->
+   <script src="fancybox/jquery.fancybox.js?v=2.1.4" type="text/javascript"></script>
+   <link href="fancybox/jquery.fancybox.css?v=2.1.4" media="screen" rel="stylesheet" type="text/css">
+   <!-- fancybox aktivieren -->
+   <script src="fancybox/fancybox.js" type="text/javascript"></script>
+   <!-- ========================= Fancy Box Ende =============================== -->
+   <!-- ========================= Highlighter ================================== -->
+   <link href="highlight11/styles/vs.min.css" rel="stylesheet">
+   <script src="highlight11/highlight.min.js"></script>
+   <script>hljs.highlightAll();</script>
+   <!-- siehe https://highlightjs.org -->
+   <!-- ========================= Highlighter ================================== -->
+   <link href="urs.css" rel="stylesheet">
+   <link href="tooltip.css" rel="stylesheet">
+   <link href="UrsAi2.css" rel="stylesheet">
+   <style>
+.pictureArray_table td {
+	text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<script id="urs-header" date="2024-08-21" projecttitle="&lt;img alt='' src='_grafiken/AI2-48x48.png' style='float: left'&gt; AI2 Popup Menu Extension: Diverse selection" src="urs-header.js"></script>
+<div id="Inhalt" class="hyphenate">
+   <p><a href="android-AI2-Popup.html">
+   <img alt="Deutsche Version" height="23" src="_grafiken/flag-german.png" style=";vertical-align: middle" title="Deutsche Version" width="38"></a>&nbsp;&nbsp;
+   <strong><a href="android-AI2-Popup.html">Deutsche Version</a></strong></p>
+
+   <h1 id="motiv">Motivation</h1>
+   <p>The MIT App Inventor contains components for selection from lists, e.g. the
+   <a href="http://ai2.appinventor.mit.edu/reference/components/userinterface.html#ListView" target="_blank">
+   ListView</a> component. Unfortunately, it always fills the entire screen and you are only few options 
+   to configure the view. The extension presented here is a wrapper for the Android p<a href="https://developer.android.com/reference/android/widget/PopupMenu" target="_blank">opup 
+   menu</a>. Almost all properties are adjustable. If something is missing, write to me
+   <a href="mailto:bienonline@gmx.de?subject=AI2%20Popup%20Menu">E-Mail to Ulli</a>.</p>
+   <p style="margin-left: 80px">
+   <img alt="" height="184" src="android-AI2-Popup/example1.png" width="208">&nbsp;or in black&nbsp;
+   <img alt="" height="133" src="android-AI2-Popup/example2.png" width="191"></p>
+   <hr>
+
+   <h1 id="versionhist">Version history</h1>
+   <table class="nice_table">
+	  <tr>
+		 <th>Version</th>
+		 <th>Adjustments</th>
+	  </tr>
+	  <tr>
+		 <td><span class="noWrap">1.0.0 (2021-01-20)</span></td>
+		 <td>Initial version</td>
+	  </tr>
+	  <tr>
+		 <td>1.1.0 (2021-09-21)</td>
+		 <td>Method <span class="symbolNoWrap"><a href="#Dismiss">Dismiss</a></span> added.</td>
+	  </tr>
+   </table>
+   <hr>
+   <div class="contents PrinterInvisible">
+	  <p class="contentsE1"><a href="#down">Download</a></p>
+	  <p class="contentsE1"><a href="#use">Usage</a></p>
+	  <p class="contentsE2"><a href="#insert">Integrating the extension into an AI2 project</a></p>
+	  <p class="contentsE2"><a href="#config-item">Configuring menu items</a></p>
+	  <p class="contentsE2"><a href="#config">Other settings</a></p>
+	  <p class="contentsE2"><a href="#events">Events triggered by the pop-up menu</a></p>
+	  <p class="contentsE1"><a href="#ref">Reference</a></p>
+	  <p class="contentsE2"><a href="#ref-props">Properties</a></p>
+	  <p class="contentsE2"><a href="#ref-meths">Functions</a></p>
+	  <p class="contentsE2"><a href="#ref-events">Events</a></p>
+	  <p class="contentsE1"><a href="#example">Example PopupTest</a></p>
+	  <p class="contentsE1"><a href="#tools">Tools</a></p>
+   </div>
+
+   <h1 id="down">Download</h1>
+   <p>The <a href="android-AI2-Popup/UrsAI2Popup.zip">UrsAI2Popup ZIP archive</a> for download. The 
+   archive contains the source code, the compiled binary for uploading to the App Inventor and a sample 
+   application.</p>
+
+   <h1 id="use">Usage</h1>
+   <p>The popup menu is bound to another visible component (<span class="symbolNoWrap">anchor</span>). 
+   If it is opened via the <span class="symbolNoWrap">Show</span> method, it appears below the anchor 
+   component. If there is not enough space, it is displayed above.</p>
+
+   <h2 id="insert">Integrating the extension into an AI2 project</h2>
+   <p>The anchor component is selected in the designer. The component can be of any visible type. In 
+   the example it is the button with the name <span class="symbolNoWrap" style="font-weight: normal">
+   cmdMore</span>. If <span class="symbolNoWrap">Anchor</span> is not selected, the app will abort.</p>
+   <p style="margin-left: 40px"><img alt="" src="android-AI2-Popup/anchor.png"></p>
+
+   <h2 id="config-item">Configuring menu items</h2>
+   <p>First of all, the menu lines must be defined. There are various ways of doing this.</p>
+   <p>The <span class="symbolNoWrap">MenuItemsFromString</span> property is available in the designer 
+   and also at runtime. Individual item definitions are listed separated by commas:</p>
+   <p style="margin-left: 40px"><img alt="" src="android-AI2-Popup/menuitemsfromstring.png"></p>
+   <p>The <span class="symbolNoWrap">SetMenuItems</span> method allows the menu items to be defined 
+   as a list:</p>
+   <p style="margin-left: 40px">
+   <img alt="" height="133" src="android-AI2-Popup/setmenuitems.png" width="646">&nbsp;</p>
+   <p>The menu definition can also be read from a file. In the Designer this is done using the
+   <span class="symbolNoWrap">MenuItemsFromFile</span> property, and at runtime using the
+   <span class="symbolNoWrap">LoadMenuItemsFromFile</span> function </p>
+   <p>The definition of a menu line consists of up to three parts, separated by a double colon (<span style="color: red"><strong>::</strong></span>):</p>
+   <p style="margin-left: 40px">&lt;Titel&gt;[<strong>::</strong>[&lt;Icon-Name&gt;][<strong>::T
+   </strong>|<strong> F</strong>]]</p>
+   <p>This means: The mandatory title in hypertext format (the text that is displayed in the menu bar), 
+   optionally followed by a double colon and, if applicable, the name of the file with the image for 
+   the symbol. If a double colon and a "T" or an "F" follow, a check box is activated in the menu line. 
+   "T" or "F" indicate the check state.</p>
+   <p>Examples for the definition of menu items:</p>
+   <ul>
+	  <li>"I<strong>nfo...</strong>": The menu line displays the text "Info...".<br><br></li>
+	  <li>"<strong>Info...::info.png</strong>": The menu line shows the text "Info...". The icon is 
+	  loaded from the "info.png" file.<br><br></li>
+	  <li>"<strong>Info...::info.png::T</strong>rue": The menu line shows the text "Info...". The icon 
+	  for the line is loaded from the "info.png" file. A CheckBox with state "checked" is added.<br>
+	  <br></li>
+	  <li>"<strong>Info...::::F</strong>alse": The menu line displays the text "Info...". A CheckBox 
+	  with state "unchecked" is added.<br></li>
+   </ul>
+
+   <h4>Menu text</h4>
+   <p>The text can contain HTML tags.</p>
+   <p style="margin-left: 40px; font-family: 'Courier New', Courier, monospace; font-size: smaller;">
+   The &lt;b&gt;quick &lt;i&gt;brown &lt;strike&gt;fox &lt;u&gt;jumps &lt;font color="red"&gt;over&lt;/font&gt;&lt;/u&gt;&lt;/strike&gt;&lt;i&gt;&lt;/b&gt;::info.png</p>
+   <p>results in this menu item:</p>
+   <p style="margin-left: 40px"><img alt="" src="android-AI2-Popup/html.png"></p>
+   <p>Which HTML tags can be used depends on the implementation. You can find hints
+   <a href="https://commonsware.com/blog/Android/2010/05/26/html-tags-supported-by-textview.html" target="_blank">
+   here</a> or
+   <a href="http://daniel-codes.blogspot.com/2011/04/html-in-textviews.html" target="_blank">here</a>.</p>
+
+   <h4>Icon name</h4>
+   <p>The name of the symbol file refers to an asset file, i.e. a file that was uploaded to the AI2 
+   project. </p>
+   <p style="margin-left: 40px"><img alt="" src="android-AI2-Popup/uploadedassets.png"></p>
+   <p>The file extensions ".png" or ".jpg" can be omitted. The extension searches for it automatically.The 
+   name is case sensitive!</p>
+
+   <h4>CheckBox</h4>
+   <p>The third item in the menu item definition determines whether a CheckBox is displayed. Only the 
+   first letter is evaluated here. Upper / lower case is not important. For example, "False" is synonymous 
+   with "f" and "true" with "T". Other characters than "t" or "f" are ignored, i.e. no checkbox is displayed.</p>
+
+   <h2 id="config">Other Settings</h2>
+   <p><span class="symbolNoWrap">MenuFontSize</span> defines the text sizes of the menu items for the 
+   entire menu, <span class="symbolNoWrap">MenuTextColor</span> their text color. Whith
+   <span class="symbolNoWrap">Default</span> the color is determined by the current
+   <span class="symbolNoWrap">
+   <a href="http://ai2.appinventor.mit.edu/reference/components/userinterface.html#Screen.Theme" target="_blank">
+   theme</a></span> definition. If <span class="symbolNoWrap">MenuTextColor</span> is used to specify 
+   a color, the color specifications in the hypertext code no longer work correctly. If regions of the 
+   hypertext are to be colored, <span class="symbolNoWrap">MenuTextColor</span> should be set to
+   <span class="symbolNoWrap">Default</span>.</p>
+   <p>&nbsp;The background color of the menu is <span class="symbolNoWrap">Black</span> or
+   <span class="symbolNoWrap">White</span>. With <span class="symbolNoWrap">Default</span>, the background 
+   color is determined by the current <span class="symbolNoWrap">
+   <a href="http://ai2.appinventor.mit.edu/reference/components/userinterface.html#Screen.Theme" target="_blank">
+   theme</a></span> definition.</p>
+   <p><strong>Note</strong>: Unfortunately, the background color of a menu cannot be set separately 
+   via the Android API. It is determined by the <span class="symbolNoWrap">theme</span>. The
+   <span class="symbolNoWrap">theme</span> cannot be accessed through the program. However, AI2 provides 
+   two themes, one with a black background and a white foreground and the other vice versa. To set the 
+   background color, the menu's <span class="symbolNoWrap">theme</span> is set accordingly. Apart from 
+   the background color, the themes contain different settings for other elements of the view, such 
+   as the row height of the menus. This means that black and white menus are different in other items 
+   besides the background color.</p>
+   <p>At runtime, the CheckBox state of a menu item can be changed using the
+   <span class="symbolNoWrap">SetMenuItemChecked</span> function. The item counting (<span class="symbolNoWrap">ItemNo</span>) 
+   starts at 1.</p>
+   <p>Individual menu lines can be deactivated using the <span class="symbolNoWrap">SetMenuItemEnabled</span> 
+   function. Text and symbols are displayed in light gray and the item no longer reacts to being clicked. 
+   The item counting (ItemNo) starts at 1.</p>
+   <p>The Designer's <span class="symbolNoWrap">AutoCheck</span> property can be used to determine whether 
+   the check status of the check boxes is toggled automatically when a menu line is clicked. The events 
+   provide the current, i.e. the toggled check state.</p>
+
+   <h2 id="events">Events triggered by the pop-up menu</h2>
+   <p>If a menu item is clicked, the <span class="symbolNoWrap">MenuItemSelected</span> event is triggered. 
+   The parameter <span class="symbolNoWrap">ID</span> of the event is the number of the item, starting 
+   with 1. <span class="symbolNoWrap">Checked</span> is the current, new check status if
+   <span class="symbolNoWrap">AutoCheck</span> is set.<br><br>In order to save extensive<span class="symbolNoWrap" style="font-weight: normal"> 
+   if... else if... else</span> blocks, the click events for the first five menu items are available 
+   as separate events. <span class="symbolNoWrap">MenuItemSelected</span> is triggered before
+   <span class="symbolNoWrap">MenuItem&lt;x&gt;Selected</span>.</p>
+
+   <h1 id="ref">Reference</h1>
+
+   <h2 id="ref-props">Properties</h2>
+   <dl class="properties">
+
+	  <dt id="Anchor" class="component do"><em>Anchor</em></dt>
+	  <dd>Specifies the (visible) component below which the pop-up menu is displayed. If there is not 
+	  enough space below the component, the menu is displayed above the specified component.</dd>
+
+	  <dt id="AutoCheck" class="boolean do"><em>AutoCheck</em></dt>
+	  <dd>Specifies whether the menu lines with checkboxes change their check state automatically when 
+	  they are clicked.</dd>
+
+	  <dt id="MenuBackgroundColor" class="color"><em>MenuBackgroundColor</em></dt>
+	  <dd>Defines the background color of the menu. Possible specifications: White, Black, Default. Upper/lower case does not matter.</dd>
+
+	  <dt id="MenuFontSize" class="number"><em>MenuFontSize</em> </dt>
+	  <dd>Specifies the font size of the menu <span lang="de">items</span>.</dd>
+
+	  <dt id="MenuItemsFromString" class="text"><em>MenuItemsFromString</em> </dt>
+	  <dd>Defines the entries of the pop-up menu as a comma separated string (see section
+	  <a href="#config-item">Configuring menu items</a>).</dd>
+
+	  <dt id="MenuItemsFromFile" class="asset"><em>MenuItemsFromFile</em> </dt>
+	  <dd>Specifies an asset file from which the definitions of the menu item are loaded (see section
+	  <a href="#config-item">Configuring menu items</a>).</dd>
+
+	  <dt id="MenuTextColor" class="color"><em>MenuTextColor</em> </dt>
+	  <dd>Set<span lang="de">s</span> the text color of the menu items.</dd>
+
+	  <dt id="Version" class="text ro"><em>Version</em></dt>
+	  <dd>Gets the version of the extension.</dd>
+   </dl>
+
+   <h2 id="ref-meths">Functions</h2>
+   <dl class="methods">
+
+	  <dt id="Dismiss">Dismiss()</dt>
+	  <dd>Dismisses the menu.</dd>
+
+	  <dt id="LoadMenuItemsFromFile">LoadMenuItemsFromFile(<em class="text">FileName</em>)</dt>
+	  <dd>Loads the definition of the menu items from the specified asset file (see section
+	  <a href="#config-item">Configuring menu items</a>).</dd>
+
+	  <dt id="SetMenuItems">SetMenuItems(<em class="list">ItemList</em>)</dt>
+	  <dd>Defines the entries of the pop-up menu with a <span class="symbolNoWrap">List</span> (see 
+	  section <a href="#config-item">Configuring menu items</a>).</dd>
+
+	  <dt id="SetMenuItemChecked">SetMenuItemChecked(<em class="number">ItemNo</em>,
+	  <em class="boolean ">Value</em>)</dt>
+	  <dd>Sets the check state of the specified menu item. <span class="symbolNoWrap">ItemNo</span> 
+	  is the number of the item. Counting starts at 1.</dd>
+
+	  <dt id="SetMenuItemEnabled">SetMenuItemEnabled(<em class="number">ItemNo</em>,
+	  <em class="boolean ">Value</em>)</dt>
+	  <dd>Enables / disables the specified menu item. ItemNo is the number of the item. Counting starts 
+	  at 1. Disabled lines are displayed in light gray and do not react to being clicked. </dd>
+
+	  <dt id="Show">Show()</dt>
+	  <dd>Opens the menu.</dd>
+   </dl>
+
+   <h2 id="ref-events">Events</h2>
+   <dl class="events">
+
+	  <dt id="MenuItem1Selected">MenuItem1Selected(<em class="text">Title</em>, <em class="boolean">
+	  Checked</em>) </dt>
+	  <dd>Menu item #1 was clicked.</dd>
+
+	  <dt id="MenuItem2Selected">MenuItem2Selected(<em class="text">Title</em>, <em class="boolean">
+	  Checked</em>) </dt>
+	  <dd>Menu item #2 was clicked.</dd>
+
+	  <dt id="MenuItem3Selected">MenuItem3Selected(<em class="text">Title</em>, <em class="boolean">
+	  Checked</em>) </dt>
+	  <dd>Menu item #3 was clicked.</dd>
+
+	  <dt id="MenuItem4Selected">MenuItem4Selected(<em class="text">Title</em>, <em class="boolean">
+	  Checked</em>) </dt>
+	  <dd>Menu item #4 was clicked.</dd>
+
+	  <dt id="MenuItem5Selected">MenuItem5Selected(<em class="text">Title</em>, <em class="boolean">
+	  Checked</em>) </dt>
+	  <dd>Menu item #5 was clicked.</dd>
+
+	  <dt id="MenuItemSelected">MenuItemSelected(<em class="number">ID</em>, <em class="text">Title</em>,
+	  <em class="boolean">Checked</em>) </dt>
+	  <dd>The menu line with the number <span class="symbolNoWrap">ID</span> was clicked. The counting 
+	  starts at 1.</dd>
+   </dl>
+   <hr>
+
+   <h1 id="example">Example PopupTest</h1>
+   <table>
+	  <tr>
+		 <td><img alt="" height="80" src="android-AI2-Popup/popuptest.png"></td>
+		 <td>&nbsp;</td>
+		 <td>
+		 <p>Most of the functions of the sample app are already been explained above. The menu items 
+		 are bound to simple actions.</p>
+		 </td>
+	  </tr>
+   </table>
+
+   <h1 id="tools" style="clear: left">Tools</h1>
+   <p>I have gathered some tips for creating your own extensions:
+   <a href="android-ai2-faq.html?topic=extension" target="_blank">AI2 FAQ: Developing extensions</a>.</p>
+   <p>&nbsp;</p>
+</div>
+<div class="menu">
+   <!-- Klassenname bestimmt den aufgerollten Menüpunkt -->
+   <script id="menuscript" class="ai2ui" src="urs-navigation.js"></script>
+   <noscript style="background-color: red; color: white">Die Navigation auf dieser Seite erfolgt                                                                                                                                                                                                         
+   über Java-Script!</noscript>
+</div>
+
+</body>
+
+</html>
