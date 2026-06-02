@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>[Free] WheelColorPicker - It&#39;s offering a user-friendly interface for selecting colors with various options such as wheel. - Extensions - MIT App Inventor Community</title>
+    <meta name="description" content="🧩 WheelColorPicker
+An extension for MIT App Inventor 2. 
+A color picker component developed by TechHamara using Fast CLI, offering a user-friendly interface for selecting colors with various options such as wheel type, &amp;hellip;">
+    <meta name="generator" content="Discourse 2026.3.0-latest - https://github.com/discourse/discourse version e9e7f85bab38e4eeadc7e2006dd97c6722f4db66">
+<link rel="icon" type="image/png" href="https://community.appinventor.mit.edu/uploads/default/optimized/3X/b/3/b31c85ef8c680bebd74e67785a8bae253991c8c9_2_32x32.png">
+<link rel="apple-touch-icon" type="image/png" href="https://community.appinventor.mit.edu/uploads/default/optimized/1X/177eff2d162f9b17880d0b5fa57dae096922481a_2_180x180.png">
+<meta name="theme-color" media="all" content="#ffffff">
+
+<meta name="color-scheme" content="light">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+<link rel="canonical" href="https://community.appinventor.mit.edu/t/free-wheelcolorpicker-its-offering-a-user-friendly-interface-for-selecting-colors-with-various-options-such-as-wheel/151904" />
+
+
+<link rel="search" type="application/opensearchdescription+xml" href="https://community.appinventor.mit.edu/opensearch.xml" title="MIT App Inventor Community Search">
+
+    
+    <link href="/stylesheets/color_definitions_light_2_3_77dc13e202d6e257c152c7ae49e2578dc13d86bd.css?__ws=community.appinventor.mit.edu" media="all" rel="stylesheet" class="light-scheme" data-scheme-id="2"/>
+
+<link href="/stylesheets/common_78cb8ab15e2bf7c5ad447c646a8b4b6aa0edd755.css?__ws=community.appinventor.mit.edu" media="all" rel="stylesheet" data-target="common"  />
+
+  <link href="/stylesheets/mobile_78cb8ab15e2bf7c5ad447c646a8b4b6aa0edd755.css?__ws=community.appinventor.mit.edu" media="(max-width: 39.99999rem)" rel="stylesheet" data-target="mobile"  />
+  <link href="/stylesheets/desktop_78cb8ab15e2bf7c5ad447c646a8b4b6aa0edd755.css?__ws=community.appinventor.mit.edu" media="(min-width: 40rem)" rel="stylesheet" data-target="desktop"  />
+
+
+
+    <link href="/stylesheets/chat_78cb8ab15e2bf7c5ad447c646a8b4b6aa0edd755.css?__ws=community.appinventor.mit.edu" media="all" rel="stylesheet" data-target="chat"  />
+    <link href="/stylesheets/checklist_78cb8ab15e2bf7c5ad447c646a8b4b6aa0edd755.css?__ws=community.appinventor.mit.edu" media="all" rel="stylesheet" data-target="checklist"  />
+    <link href="/stylesheets/discourse-akismet_78cb8ab15e2bf7c5ad447c646a8b4b6aa0edd755.css?__ws=community.appinventor.mit.edu" media="all" rel="stylesheet" data-target="discourse-akismet"  />
+    <link href="/stylesheets/discourse-assign_78cb8ab15e2bf7c5ad447c646a8b4b6aa0edd755.css?__ws=community.appinventor.mit.edu" media="all" rel="stylesheet" data-target="discourse-assign"  />
+    <link href="/stylesheets/discourse-details_78cb8ab15e2bf7c5ad447c646a8b4b6aa0edd755.css?__ws=community.appinventor.mit.edu" media="all" rel="stylesheet" data-target="discourse-details"  />
+    <link href="/stylesheets/discourse-lazy-videos_78cb8ab15e2bf7c5ad447c646a8b4b6aa0edd755.css?__ws=community.appinventor.mit.edu" media="all" rel="stylesheet" data-target="discourse-lazy-videos"  />
+    <link href="/stylesheets/discourse-local-dates_78cb8ab15e2bf7c5ad447c646a8b4b6aa0edd755.css?__ws=community.appinventor.mit.edu" media="all" rel="stylesheet" data-target="discourse-local-dates"  />
+    <link href="/stylesheets/discourse-narrative-bot_78cb8ab15e2bf7c5ad447c646a8b4b6aa0edd755.css?__ws=community.appinventor.mit.edu" media="all" rel="stylesheet" data-target="discourse-narrative-bot"  />
+    <link href="/stylesheets/discourse-presence_78cb8ab15e2bf7c5ad447c646a8b4b6aa0edd755.css?__ws=community.appinventor.mit.edu" media="all" rel="stylesheet" data-target="discourse-presence"  />
+    <link href="/stylesheets/discourse-solved_78cb8ab15e2bf7c5ad447c646a8b4b6aa0edd755.css?__ws=community.appinventor.mit.edu" media="all" rel="stylesheet" data-target="discourse-solved"  />
+    <link href="/stylesheets/discourse-templates_78cb8ab15e2bf7c5ad447c646a8b4b6aa0edd755.css?__ws=community.appinventor.mit.edu" media="all" rel="stylesheet" data-target="discourse-templates"  />
+    <link href="/stylesheets/discourse-topic-voting_78cb8ab15e2bf7c5ad447c646a8b4b6aa0edd755.css?__ws=community.appinventor.mit.edu" media="all" rel="stylesheet" data-target="discourse-topic-voting"  />
+    <link href="/stylesheets/discourse-translator_78cb8ab15e2bf7c5ad447c646a8b4b6aa0edd755.css?__ws=community.appinventor.mit.edu" media="all" rel="stylesheet" data-target="discourse-translator"  />
+    <link href="/stylesheets/docker_manager_78cb8ab15e2bf7c5ad447c646a8b4b6aa0edd755.css?__ws=community.appinventor.mit.edu" media="all" rel="stylesheet" data-target="docker_manager"  />
+    <link href="/stylesheets/footnote_78cb8ab15e2bf7c5ad447c646a8b4b6aa0edd755.css?__ws=community.appinventor.mit.edu" media="all" rel="stylesheet" data-target="footnote"  />
+    <link href="/stylesheets/poll_78cb8ab15e2bf7c5ad447c646a8b4b6aa0edd755.css?__ws=community.appinventor.mit.edu" media="all" rel="stylesheet" data-target="poll"  />
+    <link href="/stylesheets/spoiler-alert_78cb8ab15e2bf7c5ad447c646a8b4b6aa0edd755.css?__ws=community.appinventor.mit.edu" media="all" rel="stylesheet" data-target="spoiler-alert"  />
+    <link href="/stylesheets/chat_mobile_78cb8ab15e2bf7c5ad447c646a8b4b6aa0edd755.css?__ws=community.appinventor.mit.edu" media="(max-width: 39.99999rem)" rel="stylesheet" data-target="chat_mobile"  />
+    <link href="/stylesheets/discourse-assign_mobile_78cb8ab15e2bf7c5ad447c646a8b4b6aa0edd755.css?__ws=community.appinventor.mit.edu" media="(max-width: 39.99999rem)" rel="stylesheet" data-target="discourse-assign_mobile"  />
+    <link href="/stylesheets/discourse-solved_mobile_78cb8ab15e2bf7c5ad447c646a8b4b6aa0edd755.css?__ws=community.appinventor.mit.edu" media="(max-width: 39.99999rem)" rel="stylesheet" data-target="discourse-solved_mobile"  />
+    <link href="/stylesheets/discourse-topic-voting_mobile_78cb8ab15e2bf7c5ad447c646a8b4b6aa0edd755.css?__ws=community.appinventor.mit.edu" media="(max-width: 39.99999rem)" rel="stylesheet" data-target="discourse-topic-voting_mobile"  />
+    <link href="/stylesheets/chat_desktop_78cb8ab15e2bf7c5ad447c646a8b4b6aa0edd755.css?__ws=community.appinventor.mit.edu" media="(min-width: 40rem)" rel="stylesheet" data-target="chat_desktop"  />
+    <link href="/stylesheets/discourse-topic-voting_desktop_78cb8ab15e2bf7c5ad447c646a8b4b6aa0edd755.css?__ws=community.appinventor.mit.edu" media="(min-width: 40rem)" rel="stylesheet" data-target="discourse-topic-voting_desktop"  />
+    <link href="/stylesheets/poll_desktop_78cb8ab15e2bf7c5ad447c646a8b4b6aa0edd755.css?__ws=community.appinventor.mit.edu" media="(min-width: 40rem)" rel="stylesheet" data-target="poll_desktop"  />
+
+  <link href="/stylesheets/common_theme_3_71b595ae27a2474295069f7ec136368960b7e5ef.css?__ws=community.appinventor.mit.edu" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="3" data-theme-name="light"/>
+    
+    
+
+    
+    
+        <link rel="alternate nofollow" type="application/rss+xml" title="RSS feed of &#39;[Free] WheelColorPicker - It&#39;s offering a user-friendly interface for selecting colors with various options such as wheel.&#39;" href="https://community.appinventor.mit.edu/t/free-wheelcolorpicker-its-offering-a-user-friendly-interface-for-selecting-colors-with-various-options-such-as-wheel/151904.rss" />
+    <meta property="og:site_name" content="MIT App Inventor Community" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:image" content="https://community.appinventor.mit.edu/uploads/default/original/1X/4d32ecf51304615f4eaf9d1094a15fc3278691f9.png" />
+<meta property="og:image" content="https://community.appinventor.mit.edu/uploads/default/original/1X/4d32ecf51304615f4eaf9d1094a15fc3278691f9.png" />
+<meta property="og:url" content="https://community.appinventor.mit.edu/t/free-wheelcolorpicker-its-offering-a-user-friendly-interface-for-selecting-colors-with-various-options-such-as-wheel/151904" />
+<meta name="twitter:url" content="https://community.appinventor.mit.edu/t/free-wheelcolorpicker-its-offering-a-user-friendly-interface-for-selecting-colors-with-various-options-such-as-wheel/151904" />
+<meta property="og:title" content="[Free] WheelColorPicker - It&#39;s offering a user-friendly interface for selecting colors with various options such as wheel." />
+<meta name="twitter:title" content="[Free] WheelColorPicker - It&#39;s offering a user-friendly interface for selecting colors with various options such as wheel." />
+<meta property="og:description" content="🧩 WheelColorPicker An extension for MIT App Inventor 2.  A color picker component developed by TechHamara using Fast CLI, offering a user-friendly interface for selecting colors with various options such as wheel type, density, and sliders for lightness and alpha.Telegram | GitHub BuyMeaCoffee | YouTube Find More Extension Terms &amp; Conditions  📝 Specifications  📦 Package: io.th.wheelcolorpicker  💾 Size: 43.64 KB  ⚙ Version: 1.0  📱 Minimum API Level: 21  ..." />
+<meta name="twitter:description" content="🧩 WheelColorPicker An extension for MIT App Inventor 2.  A color picker component developed by TechHamara using Fast CLI, offering a user-friendly interface for selecting colors with various options such as wheel type, density, and sliders for lightness and alpha.Telegram | GitHub BuyMeaCoffee | YouTube Find More Extension Terms &amp; Conditions  📝 Specifications  📦 Package: io.th.wheelcolorpicker  💾 Size: 43.64 KB  ⚙ Version: 1.0  📱 Minimum API Level: 21  ..." />
+<meta property="og:article:section" content="Extensions" />
+<meta property="og:article:section:color" content="8C6238" />
+<meta property="og:article:tag" content="extensions" />
+<meta property="og:article:tag" content="free-extension" />
+<meta name="twitter:label1" value="Reading time" />
+<meta name="twitter:data1" value="3 mins 🕑" />
+<meta name="twitter:label2" value="Likes" />
+<meta name="twitter:data2" value="6 ❤" />
+<meta property="article:published_time" content="2025-07-12T19:10:52+00:00" />
+<meta property="og:ignore_canonical" content="true" />
+
+
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"QAPage","name":"[Free] WheelColorPicker - It's offering a user-friendly interface for selecting colors with various options such as wheel.","mainEntity":{"@type":"Question","name":"[Free] WheelColorPicker - It's offering a user-friendly interface for selecting colors with various options such as wheel.","text":"🧩 WheelColorPicker\n\nAn extension for MIT App Inventor 2.\n\nA color picker component developed by TechHamara using Fast CLI, offering a user-friendly interface for selecting colors with various options such as wheel type, density, and sliders for lightness and alpha.<a href=\"https://t.me/techhamara91/\" target=\"_blank\" rel=\"noopener nofollow ugc\">Telegram<\/a> | <a href=\"https://github.com/TechHamara/\" target=\"_blank\" rel=\"noopener nofollow ugc\">GitHub<\/a> <a href=\"https://buymeacoffee.com/techhamara/extras/\" target=\"_blank\" rel=\"noopener nofollow ugc\">BuyMeaCoffee<\/a> | <a href=\"https://m.youtube.com/c/TECHHAMARA?sub_confirmation=1\" target=\"_blank\" rel=\"noopener nofollow ugc\">Yo&hellip;<\/a>","upvoteCount":6,"answerCount":0,"datePublished":"2025-07-12T19:10:51.924Z","author":{"@type":"Person","name":"TechHamara","url":"https://community.appinventor.mit.edu/u/TechHamara"}}}</script>
+  </head>
+  <body class="crawler ">
+    
+    <header>
+  <a href="/">MIT App Inventor Community</a>
+</header>
+
+    <div id="main-outlet" class="wrap" role="main">
+        <div id="topic-title">
+    <h1>
+      <a href="/t/free-wheelcolorpicker-its-offering-a-user-friendly-interface-for-selecting-colors-with-various-options-such-as-wheel/151904">[Free] WheelColorPicker - It&#39;s offering a user-friendly interface for selecting colors with various options such as wheel.</a>
+    </h1>
+
+      <div class="topic-category" itemscope itemtype="http://schema.org/BreadcrumbList">
+          <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+            <a href="/c/extensions/17" class="badge-wrapper bullet" itemprop="item">
+              <span class='badge-category-bg' style='background-color: #8C6238'></span>
+              <span class='badge-category clear-badge'>
+                <span class='category-name' itemprop='name'>Extensions</span>
+              </span>
+            </a>
+            <meta itemprop="position" content="1" />
+          </span>
+      </div>
+
+      <div class="topic-category">
+        <div class='discourse-tags list-tags'>
+            <a href='https://community.appinventor.mit.edu/tag/extensions' class='discourse-tag' rel="tag">extensions</a>, 
+            <a href='https://community.appinventor.mit.edu/tag/free-extension' class='discourse-tag' rel="tag">free-extension</a>
+        </div>
+      </div>
+  </div>
+
+  
+
+    <div itemscope itemtype='http://schema.org/DiscussionForumPosting'>
+      <meta itemprop='headline' content='[Free] WheelColorPicker - It&#39;s offering a user-friendly interface for selecting colors with various options such as wheel.'>
+      <link itemprop='url' href='https://community.appinventor.mit.edu/t/free-wheelcolorpicker-its-offering-a-user-friendly-interface-for-selecting-colors-with-various-options-such-as-wheel/151904'>
+      <meta itemprop='datePublished' content='2025-07-12T19:10:51Z'>
+        <meta itemprop='articleSection' content='Extensions'>
+      <meta itemprop='keywords' content='extensions, free-extension'>
+      <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop='name' content='Massachusetts Institute of Technology'>
+          <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+            <meta itemprop='url' content='https://community.appinventor.mit.edu/uploads/default/original/1X/69d98bd983c7c56415dd3f05dea67a20ac6d355c.png'>
+          </div>
+      </div>
+
+
+          <div id='post_1'  class='topic-body crawler-post'>
+            <div class='crawler-post-meta'>
+              <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <a itemprop="url" rel='nofollow' href='https://community.appinventor.mit.edu/u/TechHamara'><span itemprop='name'>TechHamara</span></a>
+                
+              </span>
+
+                <link itemprop="mainEntityOfPage" href="https://community.appinventor.mit.edu/t/free-wheelcolorpicker-its-offering-a-user-friendly-interface-for-selecting-colors-with-various-options-such-as-wheel/151904">
+
+
+              <span class="crawler-post-infos">
+                  <time  datetime='2025-07-12T19:10:52Z' class='post-time'>
+                    July 12, 2025,  7:10pm
+                  </time>
+                  <meta itemprop='dateModified' content='2025-11-03T06:31:14Z'>
+              <span itemprop='position'>1</span>
+              </span>
+            </div>
+            <div class='post' itemprop='text'>
+              <div align="center">
+<h1><kbd>🧩 WheelColorPicker</kbd></h1>
+An extension for MIT App Inventor 2.<br>
+A color picker component developed by TechHamara using Fast CLI, offering a user-friendly interface for selecting colors with various options such as wheel type, density, and sliders for lightness and alpha.<a href="https://t.me/techhamara91/" target="_blank" rel="noopener nofollow ugc">Telegram</a> | <a href="https://github.com/TechHamara/" target="_blank" rel="noopener nofollow ugc">GitHub</a><br><a href="https://buymeacoffee.com/techhamara/extras/" target="_blank" rel="noopener nofollow ugc">BuyMeaCoffee</a> | <a href="https://m.youtube.com/c/TECHHAMARA?sub_confirmation=1" target="_blank" rel="noopener nofollow ugc">YouTube</a><br><a href="https://github.com/TechHamara/Th_Free_Extensions" target="_blank" rel="noopener nofollow ugc"><small>Find More Extension</small></a><br><a href="https://github.com/TechHamara/Th_Extensions_List/blob/main/LICENSE.md#terms-and-conditions-for-the-extension" target="_blank" rel="noopener nofollow ugc"><small>Terms &amp; Conditions</small></a>
+</div>
+<h2><a name="p-499318-specifications-1" class="anchor" href="#p-499318-specifications-1" aria-label="Heading link"></a><img src="https://community.appinventor.mit.edu/images/emoji/google/memo.png?v=15" title=":memo:" class="emoji" alt=":memo:" loading="lazy" width="20" height="20"> Specifications</h2>
+<hr>
+<p><img src="https://community.appinventor.mit.edu/images/emoji/google/package.png?v=15" title=":package:" class="emoji" alt=":package:" loading="lazy" width="20" height="20"> <strong>Package:</strong> io.th.wheelcolorpicker<br>
+<img src="https://community.appinventor.mit.edu/images/emoji/google/floppy_disk.png?v=15" title=":floppy_disk:" class="emoji" alt=":floppy_disk:" loading="lazy" width="20" height="20"> <strong>Size:</strong> 43.64 KB<br>
+<img src="https://community.appinventor.mit.edu/images/emoji/google/gear.png?v=15" title=":gear:" class="emoji" alt=":gear:" loading="lazy" width="20" height="20"> <strong>Version:</strong> 1.0<br>
+<img src="https://community.appinventor.mit.edu/images/emoji/google/mobile_phone.png?v=15" title=":mobile_phone:" class="emoji" alt=":mobile_phone:" loading="lazy" width="20" height="20"> <strong>Minimum API Level:</strong> 21<br>
+<img src="https://community.appinventor.mit.edu/images/emoji/google/date.png?v=15" title=":date:" class="emoji" alt=":date:" loading="lazy" width="20" height="20"> <strong>Updated On:</strong> <span class="discourse-local-date" data-date="2025-07-11" data-email-preview="Thu, Jul 10, 2025 6:30 PM UTC" data-timezone="Asia/Calcutta">2025-07-10T18:30:00Z</span><br>
+<img src="https://community.appinventor.mit.edu/images/emoji/google/laptop.png?v=15" title=":laptop:" class="emoji" alt=":laptop:" loading="lazy" width="20" height="20"> <strong>Built &amp; documented using:</strong> <a href="https://community.appinventor.mit.edu/t/fast-an-efficient-way-to-build-extensions/129103">FAST</a> <small><mark>v2.8.4</mark></small><br>
+<img src="https://community.appinventor.mit.edu/images/emoji/google/down_arrow.png?v=15" title=":down_arrow:" class="emoji" alt=":down_arrow:" loading="lazy" width="20" height="20"> <strong>Get aix</strong> here<br>
+<a class="attachment" href="/uploads/short-url/4uV4tM9ACIHzoyLT8f9KQaXU2ma.aix">io.th.wheelcolorpicker.aix</a> (43.6 KB)<br>
+<img src="https://community.appinventor.mit.edu/images/emoji/google/down_arrow.png?v=15" title=":down_arrow:" class="emoji" alt=":down_arrow:" loading="lazy" width="20" height="20"> <strong>Get aia/apk</strong> on <a href="https://github.com/TechHamara/WheelColorPicker" rel="noopener nofollow ugc">GitHub</a><br>
+<img src="https://community.appinventor.mit.edu/images/emoji/google/down_arrow.png?v=15" title=":down_arrow:" class="emoji" alt=":down_arrow:" loading="lazy" width="20" height="20"> <strong>Download aix</strong> on <a href="https://buymeacoffee.com/techhamara/e/431601" rel="noopener nofollow ugc">BuyMeCoffee Page</a><br>
+<img src="https://community.appinventor.mit.edu/images/emoji/google/placard.png?v=15" title=":placard:" class="emoji" alt=":placard:" loading="lazy" width="20" height="20"> Library Used : Thank you QuadFlask for your <a href="https://github.com/QuadFlask/colorpicker.git" rel="noopener nofollow ugc">colorpicker</a> library</p>
+<h2><a name="p-499318-demo-2" class="anchor" href="#p-499318-demo-2" aria-label="Heading link"></a>Demo</h2>
+<p><img src="https://github.com/user-attachments/assets/322241b5-c704-48d0-a3e3-931560783edf" alt="Wheel picker blocks.png" width="689" height="330"></p>
+<p><img src="https://github.com/user-attachments/assets/b493586f-2965-422e-9cac-aa913d9b06d5" alt="Color2.gif" width="271" height="480"></p>
+<p><img src="https://github.com/user-attachments/assets/c6a19e32-5583-4f8d-92cb-e622be401993" alt="Color3.gif" width="271" height="480"></p>
+<p><img src="https://github.com/user-attachments/assets/05f61e2b-5b99-4e90-b562-14baecd8b328" alt="Color 1.gif" width="271" height="480"></p>
+<p><img src="https://github.com/user-attachments/assets/7da4d3a0-d952-49e6-96cc-72b3ac48cbd7" alt="wheel_picker1.jpg" width="224" height="500"></p>
+<p><img src="https://github.com/user-attachments/assets/dc5636b5-b613-482e-808f-86200eed5928" alt="wheel_picker3.jpg" width="224" height="500"></p>
+<p><img src="https://github.com/user-attachments/assets/611fd496-6d59-48c5-a5d5-65ace3e2fe01" alt="wheel_picker2.jpg" width="224" height="500"></p>
+<h2><a name="p-499318-blocks-3" class="anchor" href="#p-499318-blocks-3" aria-label="Heading link"></a>Blocks</h2>
+<p><img width="318" height="85" alt="ColorSelected_Event" src="https://github.com/user-attachments/assets/1a15e998-224b-4cb7-bf61-c4f2d3778bc5"><br>
+<img width="320" height="85" alt="ColorChanged_Event" src="https://github.com/user-attachments/assets/e7341105-d92a-43b4-a892-726aebf0f835"><br>
+<img width="360" height="85" alt="WheelTypeChanged_Event" src="https://github.com/user-attachments/assets/f4e36c20-0f60-4286-8bc1-d52b45c21d94"></p>
+<hr>
+<p><img width="252" height="26" alt="Blue_Method" src="https://github.com/user-attachments/assets/1ce69353-6912-4927-8c05-59aedb39fc64"><br>
+<img width="298" height="26" alt="AlphaValue_Method" src="https://github.com/user-attachments/assets/577f8eea-a79a-4893-bd32-296d68ff2d16"><br>
+<img width="336" height="26" alt="WheelTypeString_Method" src="https://github.com/user-attachments/assets/eb43b29c-5b74-4936-8be6-acbfed82481e"><br>
+<img width="260" height="26" alt="Value_Method" src="https://github.com/user-attachments/assets/d50672de-b3fb-4d53-afaf-6cb2c90822b1"><br>
+<img width="382" height="80" alt="ShowDialogWithButtons_Method" src="https://github.com/user-attachments/assets/f62c2dff-b54a-49a7-bea7-e2072629be62"><br>
+<img width="293" height="30" alt="ShowDialog_Method" src="https://github.com/user-attachments/assets/349274a8-cd98-4390-95fe-ee13725f0012"><br>
+<img width="292" height="30" alt="SelectColor_Method" src="https://github.com/user-attachments/assets/9b6698b7-ca0c-487f-8457-46115f2cecde"><br>
+<img width="290" height="26" alt="Saturation_Method" src="https://github.com/user-attachments/assets/713f9ad6-0e16-41c0-91f8-2d0d4b5d0383"><br>
+<img width="249" height="26" alt="Red_Method" src="https://github.com/user-attachments/assets/8d05560c-da36-4bd7-a141-24020404daf7"><br>
+<img width="250" height="26" alt="Hue_Method" src="https://github.com/user-attachments/assets/783dd748-9426-42c8-b9a8-babf7347cb21"><br>
+<img width="263" height="26" alt="Green_Method" src="https://github.com/user-attachments/assets/e46a66e8-b735-4c24-b060-e2351fd03520"><br>
+<img width="301" height="30" alt="FlowerWheel_Method" src="https://github.com/user-attachments/assets/4e32ba74-3309-44f7-b769-bb78461afa53"><br>
+<img width="267" height="55" alt="Create_Method" src="https://github.com/user-attachments/assets/a5ed7cfc-4e07-4519-8e53-f0cb253b1f7a"><br>
+<img width="301" height="130" alt="ColorRGBA_Method" src="https://github.com/user-attachments/assets/5405319a-0878-4323-8ccf-b6e4317b98d5"><br>
+<img width="290" height="105" alt="ColorRGB_Method" src="https://github.com/user-attachments/assets/20e4f1e4-d0cb-4ee1-8ebc-5662bd20d9e2"><br>
+<img width="289" height="105" alt="ColorHSV_Method" src="https://github.com/user-attachments/assets/15a0781e-fa70-42c3-a97e-19ddd4cc4e95"><br>
+<img width="285" height="26" alt="ColorHex_Method" src="https://github.com/user-attachments/assets/4483c3b6-dd69-4ea6-9dee-68702ea42e44"><br>
+<img width="294" height="30" alt="CircleWheel_Method" src="https://github.com/user-attachments/assets/6a1075cb-4c5d-4673-8dd0-cd1300f529c9"></p>
+<hr>
+<p><img width="283" height="26" alt="WheelType_Get_Property" src="https://github.com/user-attachments/assets/b1686ea3-f471-433a-9a8f-86e03d2e4fc2"><br>
+<img width="406" height="30" alt="ShowLightnessSlider_Set_Property" src="https://github.com/user-attachments/assets/4b449aa9-eaf8-415d-8467-fa37495d80fa"><br>
+<img width="347" height="26" alt="ShowLightnessSlider_Get_Property" src="https://github.com/user-attachments/assets/e2772d08-3fc9-419a-a04e-8de2295ab8e4"><br>
+<img width="393" height="30" alt="ShowColorPreview_Set_Property" src="https://github.com/user-attachments/assets/9d813dbe-4bb6-483a-bc70-559e4db2ddd6"><br>
+<img width="333" height="26" alt="ShowColorPreview_Get_Property" src="https://github.com/user-attachments/assets/074daffc-a613-48ab-a5dc-2fe8cda1ddda"><br>
+<img width="365" height="30" alt="ShowColorEdit_Set_Property" src="https://github.com/user-attachments/assets/eb56732e-3bee-402e-b103-8609d43dd56e"><br>
+<img width="306" height="26" alt="ShowColorEdit_Get_Property" src="https://github.com/user-attachments/assets/02c2cd38-68dc-4c3a-adc1-7c7061d58a37"><br>
+<img width="349" height="30" alt="ShowBorder_Set_Property" src="https://github.com/user-attachments/assets/25779204-556c-4df6-9a02-950c465c5181"><br>
+<img width="290" height="26" alt="ShowBorder_Get_Property" src="https://github.com/user-attachments/assets/4db35c82-5c0b-432c-9179-b733d9592e10"><br>
+<img width="381" height="30" alt="ShowAlphaSlider_Set_Property" src="https://github.com/user-attachments/assets/1329e6e9-a76e-4ece-92b9-c3734cdea5ff"><br>
+<img width="321" height="26" alt="ShowAlphaSlider_Get_Property" src="https://github.com/user-attachments/assets/12aad335-8c1c-4c7e-b61d-6d31d3286444"><br>
+<img width="342" height="30" alt="ShowAlpha_Set_Property" src="https://github.com/user-attachments/assets/9a750582-2655-45f4-8885-a0119cb21b16"><br>
+<img width="282" height="26" alt="ShowAlpha_Get_Property" src="https://github.com/user-attachments/assets/109836e9-34f0-45da-8e03-921db6ed5274"><br>
+<img width="348" height="30" alt="PickerCount_Set_Property" src="https://github.com/user-attachments/assets/c6416e28-ae4f-4ed9-ae4c-1630008bd5a3"><br>
+<img width="288" height="26" alt="PickerCount_Get_Property" src="https://github.com/user-attachments/assets/28ca6639-3444-42c0-81d1-7fbe09f0cef7"><br>
+<img width="330" height="30" alt="Lightness_Set_Property" src="https://github.com/user-attachments/assets/68bdb0b0-ccfa-4e4c-a26b-1065dc618b61"><br>
+<img width="270" height="26" alt="Lightness_Get_Property" src="https://github.com/user-attachments/assets/783910bc-00ad-440c-9601-5ac5c14224d7"><br>
+<img width="320" height="30" alt="Enabled_Set_Property" src="https://github.com/user-attachments/assets/6f6f8379-95a3-40f1-9f9d-69f418b3f6f2"><br>
+<img width="261" height="26" alt="Enabled_Get_Property" src="https://github.com/user-attachments/assets/d9ccb207-8d55-4aac-8cc0-c57a7553cb32"><br>
+<img width="336" height="30" alt="DialogTitle_Set_Property" src="https://github.com/user-attachments/assets/ceec94da-c095-40d7-a438-288fd27ddf78"><br>
+<img width="277" height="26" alt="DialogTitle_Get_Property" src="https://github.com/user-attachments/assets/abb7eee6-e33d-43bc-a942-e52a4b6db0d7"><br>
+<img width="316" height="30" alt="Density_Set_Property" src="https://github.com/user-attachments/assets/82074da2-3f10-4e06-ab35-695a2a5d0554"><br>
+<img width="257" height="26" alt="Density_Get_Property" src="https://github.com/user-attachments/assets/ddada9f0-9941-41f9-b844-0bf2825c2a62"><br>
+<img width="303" height="30" alt="Color_Set_Property" src="https://github.com/user-attachments/assets/9947d175-9a7a-4163-9d08-9b43fe90d3b5"><br>
+<img width="243" height="26" alt="Color_Get_Property" src="https://github.com/user-attachments/assets/c5eb184b-8667-435e-8877-a695fb323f66"><br>
+<img width="305" height="30" alt="Alpha_Set_Property" src="https://github.com/user-attachments/assets/d38fb87e-2ce0-4694-a90f-8d8a4ab0f5ec"><br>
+<img width="246" height="26" alt="Alpha_Get_Property" src="https://github.com/user-attachments/assets/bc735794-5278-4924-9774-7422587eb999"><br>
+<img width="466" height="30" alt="WheelType_Set_Property" src="https://github.com/user-attachments/assets/319ac1e2-7b1b-434f-b7a7-c80ac0c52d69"></p>
+<details>
+<summary>
+Documentation</summary>
+<h2><a name="p-499318-kbdeventskbd-4" class="anchor" href="#p-499318-kbdeventskbd-4" aria-label="Heading link"></a><kbd>Events:</kbd></h2>
+<p><strong>WheelColorPicker</strong> has total 3 events.</p>
+<h3><a name="p-499318-colorchanged-5" class="anchor" href="#p-499318-colorchanged-5" aria-label="Heading link"></a>ColorChanged</h3>
+<p>Event raised when the color is changed</p>
+<div class="md-table">
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>newColor</td>
+<td>number</td>
+</tr>
+</tbody>
+</table>
+</div><h3><a name="p-499318-colorselected-6" class="anchor" href="#p-499318-colorselected-6" aria-label="Heading link"></a>ColorSelected</h3>
+<p>Event raised when the color is selected</p>
+<div class="md-table">
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>selectedColor</td>
+<td>number</td>
+</tr>
+</tbody>
+</table>
+</div><h3><a name="p-499318-wheeltypechanged-7" class="anchor" href="#p-499318-wheeltypechanged-7" aria-label="Heading link"></a>WheelTypeChanged</h3>
+<p>Event raised when the wheel type is changed</p>
+<div class="md-table">
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>newType</td>
+<td>text</td>
+</tr>
+</tbody>
+</table>
+</div><h2><a name="p-499318-kbdmethodskbd-8" class="anchor" href="#p-499318-kbdmethodskbd-8" aria-label="Heading link"></a><kbd>Methods:</kbd></h2>
+<p><strong>WheelColorPicker</strong> has total 18 methods.</p>
+<h3><a name="p-499318-create-9" class="anchor" href="#p-499318-create-9" aria-label="Heading link"></a>Create</h3>
+<p>Initialize inside an arrangement.</p>
+<div class="md-table">
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>arrangement</td>
+<td>component</td>
+</tr>
+</tbody>
+</table>
+</div><h3><a name="p-499318-colorhex-10" class="anchor" href="#p-499318-colorhex-10" aria-label="Heading link"></a>ColorHex</h3>
+<p>Get the color of the picker as a hex string</p>
+<ul>
+<li>Return type: <code>text</code></li>
+</ul>
+<h3><a name="p-499318-colorrgb-11" class="anchor" href="#p-499318-colorrgb-11" aria-label="Heading link"></a>ColorRGB</h3>
+<p>Set the color from RGB values</p>
+<div class="md-table">
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>red</td>
+<td>number</td>
+</tr>
+<tr>
+<td>green</td>
+<td>number</td>
+</tr>
+<tr>
+<td>blue</td>
+<td>number</td>
+</tr>
+</tbody>
+</table>
+</div><h3><a name="p-499318-colorrgba-12" class="anchor" href="#p-499318-colorrgba-12" aria-label="Heading link"></a>ColorRGBA</h3>
+<p>Set the color from RGBA values</p>
+<div class="md-table">
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>red</td>
+<td>number</td>
+</tr>
+<tr>
+<td>green</td>
+<td>number</td>
+</tr>
+<tr>
+<td>blue</td>
+<td>number</td>
+</tr>
+<tr>
+<td>alpha</td>
+<td>number</td>
+</tr>
+</tbody>
+</table>
+</div><h3><a name="p-499318-red-13" class="anchor" href="#p-499318-red-13" aria-label="Heading link"></a>Red</h3>
+<p>Get the red component of the current color</p>
+<ul>
+<li>Return type: <code>number</code></li>
+</ul>
+<h3><a name="p-499318-green-14" class="anchor" href="#p-499318-green-14" aria-label="Heading link"></a>Green</h3>
+<p>Get the green component of the current color</p>
+<ul>
+<li>Return type: <code>number</code></li>
+</ul>
+<h3><a name="p-499318-blue-15" class="anchor" href="#p-499318-blue-15" aria-label="Heading link"></a>Blue</h3>
+<p>Get the blue component of the current color</p>
+<ul>
+<li>Return type: <code>number</code></li>
+</ul>
+<h3><a name="p-499318-alphavalue-16" class="anchor" href="#p-499318-alphavalue-16" aria-label="Heading link"></a>AlphaValue</h3>
+<p>Get the alpha component of the current color</p>
+<ul>
+<li>Return type: <code>number</code></li>
+</ul>
+<h3><a name="p-499318-colorhsv-17" class="anchor" href="#p-499318-colorhsv-17" aria-label="Heading link"></a>ColorHSV</h3>
+<p>Set the color from HSV values</p>
+<div class="md-table">
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hue</td>
+<td>number</td>
+</tr>
+<tr>
+<td>saturation</td>
+<td>number</td>
+</tr>
+<tr>
+<td>value</td>
+<td>number</td>
+</tr>
+</tbody>
+</table>
+</div><h3><a name="p-499318-hue-18" class="anchor" href="#p-499318-hue-18" aria-label="Heading link"></a>Hue</h3>
+<p>Get the hue component of the current color</p>
+<ul>
+<li>Return type: <code>number</code></li>
+</ul>
+<h3><a name="p-499318-saturation-19" class="anchor" href="#p-499318-saturation-19" aria-label="Heading link"></a>Saturation</h3>
+<p>Get the saturation component of the current color</p>
+<ul>
+<li>Return type: <code>number</code></li>
+</ul>
+<h3><a name="p-499318-value-20" class="anchor" href="#p-499318-value-20" aria-label="Heading link"></a>Value</h3>
+<p>Get the value component of the current color</p>
+<ul>
+<li>Return type: <code>number</code></li>
+</ul>
+<h3><a name="p-499318-flowerwheel-21" class="anchor" href="#p-499318-flowerwheel-21" aria-label="Heading link"></a>FlowerWheel</h3>
+<p>Set the wheel type to FLOWER</p>
+<h3><a name="p-499318-circlewheel-22" class="anchor" href="#p-499318-circlewheel-22" aria-label="Heading link"></a>CircleWheel</h3>
+<p>Set the wheel type to CIRCLE</p>
+<h3><a name="p-499318-wheeltypestring-23" class="anchor" href="#p-499318-wheeltypestring-23" aria-label="Heading link"></a>WheelTypeString</h3>
+<p>Get the current wheel type as string</p>
+<ul>
+<li>Return type: <code>text</code></li>
+</ul>
+<h3><a name="p-499318-selectcolor-24" class="anchor" href="#p-499318-selectcolor-24" aria-label="Heading link"></a>SelectColor</h3>
+<p>Select the current color</p>
+<h3><a name="p-499318-showdialog-25" class="anchor" href="#p-499318-showdialog-25" aria-label="Heading link"></a>ShowDialog</h3>
+<p>Show the color picker dialog</p>
+<h3><a name="p-499318-showdialogwithbuttons-26" class="anchor" href="#p-499318-showdialogwithbuttons-26" aria-label="Heading link"></a>ShowDialogWithButtons</h3>
+<p>Show the color picker dialog with custom buttons</p>
+<div class="md-table">
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>positiveButtonText</td>
+<td>text</td>
+</tr>
+<tr>
+<td>negativeButtonText</td>
+<td>text</td>
+</tr>
+</tbody>
+</table>
+</div><h2><a name="p-499318-kbdsetterskbd-27" class="anchor" href="#p-499318-kbdsetterskbd-27" aria-label="Heading link"></a><kbd>Setters:</kbd></h2>
+<p><strong>WheelColorPicker</strong> has total 14 setter properties.</p>
+<h3><a name="p-499318-enabled-28" class="anchor" href="#p-499318-enabled-28" aria-label="Heading link"></a>Enabled</h3>
+<p>Get or set whether the color picker is enabled</p>
+<ul>
+<li>Input type: <code>boolean</code></li>
+</ul>
+<h3><a name="p-499318-color-29" class="anchor" href="#p-499318-color-29" aria-label="Heading link"></a>Color</h3>
+<p>Get or set the current color</p>
+<ul>
+<li>Input type: <code>number</code></li>
+</ul>
+<h3><a name="p-499318-showalpha-30" class="anchor" href="#p-499318-showalpha-30" aria-label="Heading link"></a>ShowAlpha</h3>
+<p>Get or set whether to show alpha channel</p>
+<ul>
+<li>Input type: <code>boolean</code></li>
+</ul>
+<h3><a name="p-499318-lightness-31" class="anchor" href="#p-499318-lightness-31" aria-label="Heading link"></a>Lightness</h3>
+<p>Get or set the lightness value (0.0 to 1.0)</p>
+<ul>
+<li>Input type: <code>number</code></li>
+</ul>
+<h3><a name="p-499318-alpha-32" class="anchor" href="#p-499318-alpha-32" aria-label="Heading link"></a>Alpha</h3>
+<p>Get or set the alpha value (0.0 to 1.0)</p>
+<ul>
+<li>Input type: <code>number</code></li>
+</ul>
+<h3><a name="p-499318-wheeltype-33" class="anchor" href="#p-499318-wheeltype-33" aria-label="Heading link"></a>WheelType</h3>
+<p>Get or set the wheel type (0 for FLOWER, 1 for CIRCLE)</p>
+<ul>
+<li>Input type: <code>number</code></li>
+<li>Helper type: <code>Type</code></li>
+<li>Helper enums: <code>Flower</code>, <code>Circle</code></li>
+</ul>
+<h3><a name="p-499318-density-34" class="anchor" href="#p-499318-density-34" aria-label="Heading link"></a>Density</h3>
+<p>Get or set the density of the color wheel (2-12)</p>
+<ul>
+<li>Input type: <code>number</code></li>
+</ul>
+<h3><a name="p-499318-dialogtitle-35" class="anchor" href="#p-499318-dialogtitle-35" aria-label="Heading link"></a>DialogTitle</h3>
+<p>Get or set the dialog title</p>
+<ul>
+<li>Input type: <code>text</code></li>
+</ul>
+<h3><a name="p-499318-showlightnessslider-36" class="anchor" href="#p-499318-showlightnessslider-36" aria-label="Heading link"></a>ShowLightnessSlider</h3>
+<p>Get or set whether to show lightness slider</p>
+<ul>
+<li>Input type: <code>boolean</code></li>
+</ul>
+<h3><a name="p-499318-showalphaslider-37" class="anchor" href="#p-499318-showalphaslider-37" aria-label="Heading link"></a>ShowAlphaSlider</h3>
+<p>Get or set whether to show alpha slider</p>
+<ul>
+<li>Input type: <code>boolean</code></li>
+</ul>
+<h3><a name="p-499318-showborder-38" class="anchor" href="#p-499318-showborder-38" aria-label="Heading link"></a>ShowBorder</h3>
+<p>Get or set whether to show border</p>
+<ul>
+<li>Input type: <code>boolean</code></li>
+</ul>
+<h3><a name="p-499318-showcoloredit-39" class="anchor" href="#p-499318-showcoloredit-39" aria-label="Heading link"></a>ShowColorEdit</h3>
+<p>Get or set whether to show color edit</p>
+<ul>
+<li>Input type: <code>boolean</code></li>
+</ul>
+<h3><a name="p-499318-showcolorpreview-40" class="anchor" href="#p-499318-showcolorpreview-40" aria-label="Heading link"></a>ShowColorPreview</h3>
+<p>Get or set whether to show color preview</p>
+<ul>
+<li>Input type: <code>boolean</code></li>
+</ul>
+<h3><a name="p-499318-pickercount-41" class="anchor" href="#p-499318-pickercount-41" aria-label="Heading link"></a>PickerCount</h3>
+<p>Get or set the number of color pickers (1-5)</p>
+<ul>
+<li>Input type: <code>number</code></li>
+</ul>
+<h2><a name="p-499318-kbdgetterskbd-42" class="anchor" href="#p-499318-kbdgetterskbd-42" aria-label="Heading link"></a><kbd>Getters:</kbd></h2>
+<p><strong>WheelColorPicker</strong> has total 14 getter properties.</p>
+<h3><a name="p-499318-enabled-43" class="anchor" href="#p-499318-enabled-43" aria-label="Heading link"></a>Enabled</h3>
+<p>Get or set whether the color picker is enabled</p>
+<ul>
+<li>Return type: <code>boolean</code></li>
+</ul>
+<h3><a name="p-499318-color-44" class="anchor" href="#p-499318-color-44" aria-label="Heading link"></a>Color</h3>
+<p>Get or set the current color</p>
+<ul>
+<li>Return type: <code>number</code></li>
+</ul>
+<h3><a name="p-499318-showalpha-45" class="anchor" href="#p-499318-showalpha-45" aria-label="Heading link"></a>ShowAlpha</h3>
+<p>Get or set whether to show alpha channel</p>
+<ul>
+<li>Return type: <code>boolean</code></li>
+</ul>
+<h3><a name="p-499318-lightness-46" class="anchor" href="#p-499318-lightness-46" aria-label="Heading link"></a>Lightness</h3>
+<p>Get or set the lightness value (0.0 to 1.0)</p>
+<ul>
+<li>Return type: <code>number</code></li>
+</ul>
+<h3><a name="p-499318-alpha-47" class="anchor" href="#p-499318-alpha-47" aria-label="Heading link"></a>Alpha</h3>
+<p>Get or set the alpha value (0.0 to 1.0)</p>
+<ul>
+<li>Return type: <code>number</code></li>
+</ul>
+<h3><a name="p-499318-wheeltype-48" class="anchor" href="#p-499318-wheeltype-48" aria-label="Heading link"></a>WheelType</h3>
+<p>Get or set the wheel type (0 for FLOWER, 1 for CIRCLE)</p>
+<ul>
+<li>Return type: <code>number</code></li>
+</ul>
+<h3><a name="p-499318-density-49" class="anchor" href="#p-499318-density-49" aria-label="Heading link"></a>Density</h3>
+<p>Get or set the density of the color wheel (2-12)</p>
+<ul>
+<li>Return type: <code>number</code></li>
+</ul>
+<h3><a name="p-499318-dialogtitle-50" class="anchor" href="#p-499318-dialogtitle-50" aria-label="Heading link"></a>DialogTitle</h3>
+<p>Get or set the dialog title</p>
+<ul>
+<li>Return type: <code>text</code></li>
+</ul>
+<h3><a name="p-499318-showlightnessslider-51" class="anchor" href="#p-499318-showlightnessslider-51" aria-label="Heading link"></a>ShowLightnessSlider</h3>
+<p>Get or set whether to show lightness slider</p>
+<ul>
+<li>Return type: <code>boolean</code></li>
+</ul>
+<h3><a name="p-499318-showalphaslider-52" class="anchor" href="#p-499318-showalphaslider-52" aria-label="Heading link"></a>ShowAlphaSlider</h3>
+<p>Get or set whether to show alpha slider</p>
+<ul>
+<li>Return type: <code>boolean</code></li>
+</ul>
+<h3><a name="p-499318-showborder-53" class="anchor" href="#p-499318-showborder-53" aria-label="Heading link"></a>ShowBorder</h3>
+<p>Get or set whether to show border</p>
+<ul>
+<li>Return type: <code>boolean</code></li>
+</ul>
+<h3><a name="p-499318-showcoloredit-54" class="anchor" href="#p-499318-showcoloredit-54" aria-label="Heading link"></a>ShowColorEdit</h3>
+<p>Get or set whether to show color edit</p>
+<ul>
+<li>Return type: <code>boolean</code></li>
+</ul>
+<h3><a name="p-499318-showcolorpreview-55" class="anchor" href="#p-499318-showcolorpreview-55" aria-label="Heading link"></a>ShowColorPreview</h3>
+<p>Get or set whether to show color preview</p>
+<ul>
+<li>Return type: <code>boolean</code></li>
+</ul>
+<h3><a name="p-499318-pickercount-56" class="anchor" href="#p-499318-pickercount-56" aria-label="Heading link"></a>PickerCount</h3>
+<p>Get or set the number of color pickers (1-5)</p>
+<ul>
+<li>Return type: <code>number</code></li>
+</ul>
+</details>
+<details>
+<summary>
+FAQ</summary>
+<ul>
+<li>This WheelColorPicker Extension is Part of my  <strong><a href="https://community.appinventor.mit.edu/t/free-wled-control-wled-led-strips-via-http-api/152288">WLED Controller</a></strong> Extension.</li>
+</ul>
+</details>
+<h2><a name="p-499318-thank-57" class="anchor" href="#p-499318-thank-57" aria-label="Heading link"></a>Thank</h2>
+<p><a class="mention" href="/u/techhamara">@TechHamara</a></p>
+<h2><a name="p-499318-check-out-my-other-color-picker-58" class="anchor" href="#p-499318-check-out-my-other-color-picker-58" aria-label="Heading link"></a><img src="https://community.appinventor.mit.edu/images/emoji/google/placard.png?v=15" title=":placard:" class="emoji" alt=":placard:" loading="lazy" width="20" height="20">Check out my Other Color Picker</h2>
+<p><img src="https://community.appinventor.mit.edu/images/emoji/google/backhand_index_pointing_right.png?v=15" title=":backhand_index_pointing_right:" class="emoji" alt=":backhand_index_pointing_right:" loading="lazy" width="20" height="20">Here <a href="https://community.appinventor.mit.edu/t/free-thcolorpicker-allowing-users-to-select-colors-with-options-for-alpha-hex-and-preview/151535">ThColor Picker</a></p>
+<ul>
+<li>Feel free to <img src="https://community.appinventor.mit.edu/images/emoji/google/scroll.png?v=15" title=":scroll:" class="emoji" alt=":scroll:" loading="lazy" width="20" height="20">contact us any quarry or suggestions.</li>
+</ul>
+            </div>
+
+            <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+              <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+              <meta itemprop="userInteractionCount" content="6" />
+              <span class='post-likes'>6 Likes</span>
+            </div>
+
+                <div class='crawler-linkback-list'>
+                    <div>
+                      <a href="https://community.appinventor.mit.edu/t/free-thcolorpicker-allowing-users-to-select-colors-with-options-for-alpha-hex-and-preview/151535">[Free] ThColorPicker - Allowing users to select colors with options for alpha, hex, and preview.</a>
+                    </div>
+                </div>
+
+            
+          </div>
+    </div>
+
+
+    
+
+
+
+
+    </div>
+    <footer class="container wrap">
+  <nav class='crawler-nav'>
+    <ul>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='/' itemprop="url">Home </a>
+        </span>
+      </li>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='/categories' itemprop="url">Categories </a>
+        </span>
+      </li>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='/guidelines' itemprop="url">Guidelines </a>
+        </span>
+      </li>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='/tos' itemprop="url">Terms of Service </a>
+          </span>
+        </li>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='/privacy' itemprop="url">Privacy Policy </a>
+          </span>
+        </li>
+    </ul>
+  </nav>
+  <p class='powered-by-link'>Powered by <a href="https://www.discourse.org">Discourse</a>, best viewed with JavaScript enabled</p>
+</footer>
+
+    
+    
+  </body>
+  
+</html>
