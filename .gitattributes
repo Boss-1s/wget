@@ -1,1 +1,2 @@
 Kanux-Beta-v4.3.3-Hopper-stretch-release.img.zip filter=lfs diff=lfs merge=lfs -text
+bedrock-samples-v1.26.30.5-full.zip filter=lfs diff=lfs merge=lfs -text
