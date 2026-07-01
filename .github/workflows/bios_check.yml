@@ -8,4 +8,4 @@ jobs:
     steps:
     - uses: actions/checkout@v7
     - run: |
-        python .github/workflows/src/bios_check.py
+        python3 bios_check.py
