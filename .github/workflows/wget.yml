@@ -18,7 +18,11 @@ jobs:
 
       - name: Scan for Malware
         uses: hugoalh/scan-virus-ghaction@v0.20.1
-
+        with:
+          ignores_pre: |-
+              Param($ElementPreMeta)
+              Return ($ElementPreMeta.Path -imatch '^.git[\\/]')
+              
       - name: get file and push
         run: |
           wget ${{ inputs.link }}
