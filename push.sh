@@ -31,5 +31,5 @@ else
     echo "No files exceed 100MB."
 fi
 
-git commit -m "[WORKFLOW] Push Changes"
+git commit -m "[skip ci] [WORKFLOW] Push Changes"
 git push origin main
