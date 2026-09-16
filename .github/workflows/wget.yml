@@ -25,7 +25,7 @@ jobs:
               
       - name: get file and push
         run: |
-          wget ${{ inputs.link }}
+          wget --user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" ${{ inputs.link }}
           git config --global user.email "Boss-1s[BOT]@users.noreply.gihub.com"
           git config --global user.name "Boss-1s[BOT]"
           bash push.sh
