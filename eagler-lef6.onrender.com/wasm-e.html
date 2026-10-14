@@ -125,11 +125,13 @@
                 display: flex;
                 align-items: center;
                 margin-bottom: 1em;
+                display: none !important;
             }
 
             .staticrypt-remember input[type="checkbox"] {
                 transform: scale(1.5);
                 margin-right: 1em;
+                display: none !important;
             }
 
             .hidden {
@@ -213,10 +215,10 @@
                             />
                         </div>
 
-                        <!-- <label id="staticrypt-remember-label" class="staticrypt-remember hidden">
+                        <label id="staticrypt-remember-label" class="staticrypt-remember hidden">
                             <input id="staticrypt-remember" type="checkbox" name="remember" />
                             Remember Me for 30 days
-                        </label> -->
+                        </label>
 
                         <input type="submit" class="staticrypt-decrypt-button" value="Access" />
                     </form>
