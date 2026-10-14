@@ -117,6 +117,10 @@
                 font-size: 1.5em;
             }
 
+            .staticrypt-subtitle {
+                font-size: 1.25em;
+            }
+
             label.staticrypt-remember {
                 display: flex;
                 align-items: center;
@@ -177,14 +181,17 @@
     <body class="staticrypt-body">
         <div id="staticrypt_loading" class="staticrypt-spinner-container">
             <div class="staticrypt-spinner"></div>
+            <button href="#staticrypt_logout">Click to logout</button>
         </div>
 
         <div id="staticrypt_content" class="staticrypt-content hidden">
             <div class="staticrypt-page">
                 <div class="staticrypt-form">
                     <div class="staticrypt-instructions">
-                        <p class="staticrypt-title">Boss_1s - PROTECTED ACCESS</p>
-                        <p></p>
+                        <p class="staticrypt-title">EaglerCraft 1.12.2 - Protected</p>
+                        <p class="staticrypt-subtitle">Per the owner's request, this page is password-protected.</p><br>
+                        <p>This is a protected copy of <strong>EaglerCraft 1.12.2</strong>, containing a private server that is not meant for public use.<br>
+                            <em>If you are not supposed to be here, <strong>get out.</em></strong></p>
                     </div>
 
                     <hr class="staticrypt-hr" />
@@ -212,7 +219,7 @@
                             Remember Me for 30 days
                         </label>
 
-                        <input type="submit" class="staticrypt-decrypt-button" value="DECRYPT" />
+                        <input type="submit" class="staticrypt-decrypt-button" value="Access" />
                     </form>
                 </div>
             </div>
