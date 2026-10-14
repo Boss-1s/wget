@@ -1,0 +1,4 @@
+.staticrypt.json
+node_modules/
+encypted/
+package*.json
