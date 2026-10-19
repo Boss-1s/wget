@@ -23,6 +23,11 @@ on:
         type: boolean
         default: false
         required: false
+      node:
+        default: false
+        type: boolean
+        required: false
+        description: 'Setup Node.js'
 
 jobs:
   build:
@@ -35,9 +40,13 @@ jobs:
         with:
           repository: ${{ inputs.repo }}
 
-      - name: Setup Python
-        if: inputs.python
-        uses: actions/setup-python@v7
+      - parallel:
+        - name: Setup Python
+          if: inputs.python
+          uses: actions/setup-python@v7
+        - name: Setup Node.js
+          if: inputs.node
+          uses: actions/setup-node@v7.1.0
 
       - name: run command
         run: ${{inputs.run}}
