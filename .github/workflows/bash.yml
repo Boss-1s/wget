@@ -15,7 +15,8 @@ on:
       commit:
         description: 'Commit any changes to the above repo?'
         type: boolean
-        required: true
+        default: true
+        required: false
 
 jobs:
   build:
