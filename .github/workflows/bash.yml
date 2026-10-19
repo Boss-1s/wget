@@ -10,7 +10,12 @@ on:
       repo:
         description: '[Optional] Repo to check out, in format owner/repo'
         type: string
+        default: Boss-1s/wget
         required: false
+      commit:
+        description: 'Commit any changes to the above repo?'
+        type: boolean
+        required: true
 
 jobs:
   build:
@@ -25,3 +30,10 @@ jobs:
 
       - name: run command
         run: ${{inputs.run}}
+
+      - name: commit and push
+        if: inputs.commit
+        run: |
+          git config --global user.email "Boss-1s[BOT]@users.noreply.gihub.com"
+          git config --global user.name "Boss-1s[BOT]"
+          bash push.sh
