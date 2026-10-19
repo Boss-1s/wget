@@ -18,6 +18,12 @@ on:
         default: true
         required: false
 
+      python:
+        description: 'Setup Python'
+        type: boolean
+        default: false
+        required: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -25,9 +31,13 @@ jobs:
     steps:
       - name: Checkout Repo
         if: ${{ inputs.repo != '' }}
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           repository: ${{ inputs.repo }}
+
+      - name: Setup Python
+        if: inputs.python
+        uses: actions/setup-python@v7
 
       - name: run command
         run: ${{inputs.run}}
